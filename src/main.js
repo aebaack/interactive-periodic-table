@@ -2,6 +2,8 @@
 
 const electron = require('electron');
 const { app, BrowserWindow } = electron;
+const path = require('path');
+const url = require('url');
 
 let mainWindow; // Ensures garbage collection does not remove the window
 
@@ -14,7 +16,11 @@ app.on('ready', () => {
   });
 
   // Loads index.html in as the main application page
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
 
   mainWindow.on('closed', () => {
     mainWindow = null; // allow window to be garbage collected
