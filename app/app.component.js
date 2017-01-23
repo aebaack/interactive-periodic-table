@@ -23,4 +23,5 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+// change to templateUrl 
 //# sourceMappingURL=app.component.js.map

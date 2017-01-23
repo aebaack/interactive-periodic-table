@@ -1,0 +1,1 @@
+//# sourceMappingURL=periodic-table.component.js.map
