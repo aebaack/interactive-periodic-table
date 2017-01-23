@@ -12,7 +12,8 @@
     "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
     "test-once": "tsc && karma start karma.conf.js --single-run",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "build": "rimraf Periodic-* && electron-packager . --platform=darwin,win32,linux --arch=x64 --icon=app"
   },
   "keywords": [],
   "author": "KJ",
@@ -38,6 +39,7 @@
     "canonical-path": "0.0.2",
     "concurrently": "^3.1.0",
     "electron": "^1.4.15",
+    "electron-packager": "^8.5.1",
     "http-server": "^0.9.0",
     "jasmine-core": "~2.4.1",
     "karma": "^1.3.0",
