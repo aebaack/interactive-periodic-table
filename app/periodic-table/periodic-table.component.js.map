@@ -1,1 +1,1 @@
-{"version":3,"file":"periodic-table.component.js","sourceRoot":"","sources":["periodic-table.component.ts"],"names":[],"mappings":""}
+{"version":3,"file":"periodic-table.component.js","sourceRoot":"","sources":["periodic-table.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA0B,eAAe,CAAC,CAAA;AAQ1C;IAAA;IAAqC,CAAC;IANtC;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,MAAM,CAAC,EAAE;YACnB,QAAQ,EAAE,UAAU;YACpB,WAAW,EAAE,+BAA+B;SAC7C,CAAC;;8BAAA;IAEmC,6BAAC;AAAD,CAAC,AAAtC,IAAsC;AAAzB,8BAAsB,yBAAG,CAAA"}
