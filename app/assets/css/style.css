@@ -23,3 +23,23 @@ h1 {
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+
+.periodic-table {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
+
+.element {
+  width: 5.5555%;
+  height: 100%;
+  float: left;
+  border: 1px solid black;
+}
+
+.blank {
+  background-color: transparent;
+  border: none;
+}

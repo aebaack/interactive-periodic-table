@@ -15,7 +15,15 @@ var PeriodicTableComponent = (function () {
         this._elementService = _elementService;
     }
     PeriodicTableComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.elements = this._elementService.getElements();
+        this.elementHeight = this.setHeight();
+        window.addEventListener('resize', function () {
+            _this.elementHeight = _this.setHeight();
+        });
+    };
+    PeriodicTableComponent.prototype.setHeight = function () {
+        return document.getElementById('element_1').offsetWidth;
     };
     PeriodicTableComponent = __decorate([
         core_1.Component({
