@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var elements_service_1 = require('../elements/elements.service');
 var PeriodicTableComponent = (function () {
-    function PeriodicTableComponent() {
+    function PeriodicTableComponent(_elementService) {
+        this._elementService = _elementService;
     }
+    PeriodicTableComponent.prototype.ngOnInit = function () {
+        this.elements = this._elementService.getElements();
+    };
     PeriodicTableComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'pt-table',
             templateUrl: 'periodic-table.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [elements_service_1.ElementService])
     ], PeriodicTableComponent);
     return PeriodicTableComponent;
 }());
