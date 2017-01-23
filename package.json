@@ -1,5 +1,5 @@
 {
-  "name": "angular-quickstart",
+  "name": "interactive-periodic-table",
   "version": "1.0.0",
   "main": "main.js",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
@@ -15,7 +15,7 @@
     "tsc:w": "tsc -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "KJ",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~2.4.0",
