@@ -1,1 +1,6 @@
-<h1>Element Component</h1>
+<div [id]="elementData.atomicNumber" (mouseenter) = "onHover()">
+    <!--sets div id = to atomicNumber of element-->
+    <!--(mouseenter) triggers onHover fxn when-->
+    <div>{{ elementData.symbol }}</div>
+    <div>{{ elementData.atomicNumber }}</div>
+</div>

@@ -2,7 +2,9 @@
 
 <div class="periodic-table">
   <div [style.height.px]='elementHeight' class="row clearfix">
-    <div id="element_1" class="element">H</div>
+    <pt-element [elementData] = "getElement(1)" id="element_1" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    <!--[elementData] binds child component's elementData property to the getElement fxn in periodic-table component-->
+    <!--(elementHovered) listens for output from hover event in child component, triggers hoverReceived()-->
     <div class="element blank"></div>
     <div class="element blank"></div>
     <div class="element blank"></div>
@@ -19,6 +21,6 @@
     <div class="element blank"></div>
     <div class="element blank"></div>
     <div class="element blank"></div>
-    <div class="element">He</div>
+    <pt-element [elementData] = "getElement(2)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
   </div>
 </div>

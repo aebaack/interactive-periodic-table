@@ -30,5 +30,11 @@ export class PeriodicTableComponent implements OnInit {
   getElement(atomicNumber: number): Object {
     return this.elements.find(element => element.atomicNumber === atomicNumber); 
   }
+
+  hoverReceived(element: Object): void{
+    console.log(element);
+  }
+    // ^ receives element data from child component
+
 }
 
