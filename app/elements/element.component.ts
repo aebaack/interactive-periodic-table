@@ -4,7 +4,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'pt-element',
-  templateUrl: 'element.component.html'
+  templateUrl: 'element.component.html',
+    styleUrls: ['element.component.css'] 
+
 })
 
 export class ElementComponent {
