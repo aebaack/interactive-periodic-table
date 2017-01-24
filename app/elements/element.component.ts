@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   moduleId: module.id,
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: 'element.component.html'
 })
 
-export class ElementComponent {}
+export class ElementComponent {
+  @Input() elementData: Object;
+
+}
