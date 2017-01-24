@@ -8,9 +8,5 @@ export class ElementService {
   getElements(): any[] {
     const elements = readFileSync('./app/assets/elements.json', 'utf8');
     return JSON.parse(elements);
-    // return [{
-    //   atomicNumber: 1,
-    //   symbol: 'H'
-    // }]
   }
 }
