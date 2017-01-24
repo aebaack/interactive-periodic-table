@@ -1,6 +1,6 @@
 <h1>Periodic Table</h1>
 <bohr-modal [showBohrModal]="showModal"></bohr-modal>
-
+<pt-filter></pt-filter>
 <div class="periodic-table" (click)="toggleBohrModal()" (keyup)="toggleBohrModal()">
     <div [style.height.px]='elementHeight' class="row clearfix">
         <pt-element [elementData]="getElement(1)" id="element_1" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
