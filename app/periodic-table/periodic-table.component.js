@@ -22,8 +22,6 @@ var PeriodicTableComponent = (function () {
             _this.elementHeight = _this.setHeight();
         });
     };
-    PeriodicTableComponent.prototype.set = function () {
-    };
     PeriodicTableComponent.prototype.setHeight = function () {
         return document.getElementById('element_1').offsetWidth;
     };
