@@ -26,5 +26,9 @@ export class PeriodicTableComponent implements OnInit {
   setHeight(): number {
     return document.getElementById('element_1').offsetWidth;
   }
+
+  getElement(atomicNumber: number): Object {
+    return this.elements.find(element => element.atomicNumber === atomicNumber); 
+  }
 }
 
