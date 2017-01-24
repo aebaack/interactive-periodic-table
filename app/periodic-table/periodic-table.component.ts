@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementService } from '../elements/elements.service';
+import { Element } from '../elements/element';
 
 declare var Atom: any;
 
@@ -12,7 +13,7 @@ declare var Atom: any;
 })
 
 export class PeriodicTableComponent implements OnInit {
-  elements: any[];
+  elements: Element[];
   elementHeight: number;
   element: any;
   showModal: boolean;
@@ -22,7 +23,8 @@ export class PeriodicTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.elements = this._elementService.getElements();
+    this._elementService.getElements();
+    this.elements = this._elementService.elements;
 
     this.elementHeight = this.setHeight();
     window.addEventListener('resize', () => {
@@ -36,11 +38,11 @@ export class PeriodicTableComponent implements OnInit {
     return document.getElementById('element_1').offsetWidth;
   }
 
-  getElement(atomicNumber: number): Object {
+  getElement(atomicNumber: number): Element {
     return this.elements.find(element => element.atomicNumber === atomicNumber);
   }
 
-  hoverReceived(element: Object): void {
+  hoverReceived(element: Element): void {
     this.element = element;
   }
   // ^ receives element data from child component
