@@ -16,6 +16,8 @@ export class ElementComponent {
   @Output() elementHovered: EventEmitter<Object> = new EventEmitter<Object>();
   // ^ exposes which element is being hovered on to the parent component, sends proper data to hoverReceived fxn
 
+  elementStyle: Object = {};
+
   onHover(): void {
     this.elementHovered.emit(this.elementData);
   }
