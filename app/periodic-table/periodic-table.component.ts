@@ -4,7 +4,8 @@ import { ElementService } from '../elements/elements.service';
 @Component({
   moduleId: module.id,
   selector: 'pt-table',
-  templateUrl: 'periodic-table.component.html'
+  templateUrl: 'periodic-table.component.html',
+  styleUrls: ['periodic-table.component.css']
 })
 
 export class PeriodicTableComponent implements OnInit {
