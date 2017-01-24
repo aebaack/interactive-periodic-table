@@ -10,6 +10,7 @@ import { ElementService } from '../elements/elements.service';
 export class PeriodicTableComponent implements OnInit {
   elements: any[];
   elementHeight: number;
+  element: any;
 
   constructor(private _elementService: ElementService) {  
   }
@@ -32,9 +33,8 @@ export class PeriodicTableComponent implements OnInit {
   }
 
   hoverReceived(element: Object): void{
-    console.log(element);
+    this.element = element;
   }
     // ^ receives element data from child component
 
 }
-
