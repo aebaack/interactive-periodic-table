@@ -10,5 +10,6 @@ import { ElementService } from '../elements/elements.service';
 
 export class BohrModalComponent {
 
+    showBohrModal: boolean = true;
 
 }
