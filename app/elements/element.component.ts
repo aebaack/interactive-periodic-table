@@ -19,7 +19,9 @@ export class ElementComponent implements OnInit {
   elementStyle: Object = {};
 
   ngOnInit(): void {
-    
+    if (this.elementData.highlight) {
+      this.elementStyle = {'background-color': 'pink'};
+    }
   }
 
   onHover(): void {

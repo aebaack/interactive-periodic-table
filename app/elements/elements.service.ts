@@ -13,6 +13,11 @@ export class ElementService {
     for (const element of elements) {
       element.highlight = false;
     }
+    //elements[0].highlight = true;
     this.elements = elements;
+  }
+
+  highlightElement(index: number): void {
+    this.elements[index].highlight = true;
   }
 }
