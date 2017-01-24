@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter, OnInit  } from '@angular/core';
+import { Element } from './element';
 
 @Component({
   moduleId: module.id,
@@ -9,14 +9,18 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 })
 
-export class ElementComponent {
-  @Input() elementData: Object;
+export class ElementComponent implements OnInit {
+  @Input() elementData: Element;
   // ^ exposes elementData property to parent component, listens for parent component to send data to child
 
   @Output() elementHovered: EventEmitter<Object> = new EventEmitter<Object>();
   // ^ exposes which element is being hovered on to the parent component, sends proper data to hoverReceived fxn
 
   elementStyle: Object = {};
+
+  ngOnInit(): void {
+    
+  }
 
   onHover(): void {
     this.elementHovered.emit(this.elementData);
