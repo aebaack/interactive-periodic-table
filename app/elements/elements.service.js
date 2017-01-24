@@ -9,15 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var fs_1 = require('fs');
+var fs_1 = require('fs'); // calls the readFileSync method from the node file system module
 var ElementService = (function () {
     function ElementService() {
     }
+    // synchronously returns the elements from elements.json
     ElementService.prototype.getElements = function () {
         var elements = fs_1.readFileSync('./app/assets/elements.json', 'utf8');
         return JSON.parse(elements);
+        // return [{
+        //   atomicNumber: 1,
+        //   symbol: 'H'
+        // }]
     };
     ElementService = __decorate([
+        // calls the readFileSync method from the node file system module
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
     ], ElementService);
