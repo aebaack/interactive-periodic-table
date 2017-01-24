@@ -1,8 +1,9 @@
 <h1>Periodic Table</h1>
+<bohr-modal [showBohrModal] = "showModal"></bohr-modal>
 
 <div class="periodic-table">
     <div [style.height.px]='elementHeight' class="row clearfix">
-        <pt-element [elementData]="getElement(1)" id="element_1" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(1)" id="element_1" class="element" (elementHovered)="hoverReceived($event)" (click) = "toggleBohrModal()"></pt-element>
         <!--[elementData] binds child component's elementData property to the getElement fxn in periodic-table component-->
         <!--(elementHovered) listens for output from hover event in child component, triggers hoverReceived()-->
         <div class="element blank"></div>
