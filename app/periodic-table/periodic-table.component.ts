@@ -12,6 +12,7 @@ export class PeriodicTableComponent implements OnInit {
   elements: any[];
   elementHeight: number;
   element: any;
+  showModal: boolean;
 
   constructor(private _elementService: ElementService) {  
   }
@@ -23,6 +24,8 @@ export class PeriodicTableComponent implements OnInit {
     window.addEventListener('resize', () => {
       this.elementHeight = this.setHeight();
     });
+    
+    this.showModal = false;
   }
 
   setHeight(): number {
@@ -37,5 +40,9 @@ export class PeriodicTableComponent implements OnInit {
     this.element = element;
   }
     // ^ receives element data from child component
+
+  toggleBohrModal(): void {
+    this.showModal = !this.showModal;
+  }
 
 }
