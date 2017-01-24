@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -9,5 +9,11 @@ import { Component, Input } from '@angular/core';
 
 export class ElementComponent {
   @Input() elementData: Object;
+
+  @Output() elementHovered: EventEmitter<Object> = new EventEmitter<Object>();
+
+  onHover(): void{
+    this.elementHovered.emit(this.elementData);
+  }
 
 }

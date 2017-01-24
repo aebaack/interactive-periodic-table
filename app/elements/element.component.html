@@ -1,2 +1,4 @@
-<div>{{ elementData.symbol }}</div>
-<div>{{ elementData.atomicNumber }}</div>
+<div [id]="elementData.atomicNumber" (mouseenter) = "onHover()">
+    <div>{{ elementData.symbol }}</div>
+    <div>{{ elementData.atomicNumber }}</div>
+</div>
