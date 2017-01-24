@@ -16,8 +16,11 @@ var ElementService = (function () {
     // synchronously returns the elements from elements.json
     ElementService.prototype.getElements = function () {
         var elements = fs_1.readFileSync('./app/assets/elements.json', 'utf8');
-        //return JSON.parse(elements);
-        return [];
+        return JSON.parse(elements);
+        // return [{
+        //   atomicNumber: 1,
+        //   symbol: 'H'
+        // }]
     };
     ElementService = __decorate([
         // calls the readFileSync method from the node file system module

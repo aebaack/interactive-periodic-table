@@ -16,6 +16,7 @@ export class PeriodicTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.elements = this._elementService.getElements();
+
     this.elementHeight = this.setHeight();
     window.addEventListener('resize', () => {
       this.elementHeight = this.setHeight();
