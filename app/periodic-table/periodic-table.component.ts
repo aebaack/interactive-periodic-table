@@ -33,9 +33,8 @@ export class PeriodicTableComponent implements OnInit {
 
   hoverReceived(element: Object): void{
     console.log(element);
-    
   }
-
+    // ^ receives element data from child component
 
 }
 
