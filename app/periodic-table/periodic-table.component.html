@@ -2,7 +2,7 @@
 
 <div class="periodic-table">
   <div [style.height.px]='elementHeight' class="row clearfix">
-    <pt-element [elementData] = "getElement(1)" id="element_1" class="element">H</pt-element>
+    <pt-element [elementData] = "getElement(1)" id="element_1" class="element"></pt-element>
     <div class="element blank"></div>
     <div class="element blank"></div>
     <div class="element blank"></div>
@@ -19,6 +19,6 @@
     <div class="element blank"></div>
     <div class="element blank"></div>
     <div class="element blank"></div>
-    <div class="element">He</div>
+    <pt-element [elementData] = "getElement(2)" id="element_2" class="element"></pt-element>
   </div>
 </div>
