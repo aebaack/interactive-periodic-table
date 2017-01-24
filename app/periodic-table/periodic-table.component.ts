@@ -47,8 +47,7 @@ export class PeriodicTableComponent implements OnInit {
 
   toggleBohrModal(): void {
     this.showModal = !this.showModal;
-    document.getElementById("bohr-model-container").innerHTML = "";
-    //^clearing html model
+    document.getElementById("bohr-model-container").innerHTML = ""; //^clearing html model
 
     this.Atom = new Atom({
         containerId: '#bohr-model-container',
@@ -56,7 +55,7 @@ export class PeriodicTableComponent implements OnInit {
         nucleusRadius: 30, // If not supplied will be 1/12 of the containers width
         nucleusColor: 'rgba(124,240,10,0.5)', // Hex, string or rbga
         electronRadius: 3, // Default value is 3
-        electronColor: 'blue', // See nucleusColor
+        electronColor: 'pink', // See nucleusColor
         orbitalSpacing: 10, // If not specified will be a 1/3rd of the nucleusRadius
         orbitalWidth: 1, // width of orbital paths, default is 0.1
         orbitalColor: 'black', // see electronColor

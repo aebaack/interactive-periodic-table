@@ -1,7 +1,8 @@
 
 .periodic-table {
-    width: 100%;
+    width: 80%;
     min-width: 800px;
+    margin: 5% auto;
 }
 
 .row {
@@ -12,18 +13,14 @@
     width: 5.5555%;
     height: 100%;
     float: left;
-    border: 1px solid black;
+    padding: 5px;
+}
+
+.element:hover {
+    padding: 0;
 }
 
 .blank {
-    background-color: transparent;
-    border: none;
-}
-
-.blanklong {
-    width: 5.5555%;
-    height: 100%;
-    float: left;
     background-color: transparent;
     border: none;
 }
