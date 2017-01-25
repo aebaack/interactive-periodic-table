@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementService } from '../elements/elements.service';
 import { Element } from '../elements/element';
+import { Filter } from './filter';
 
 @Component({
   moduleId: module.id,
@@ -11,18 +12,34 @@ import { Element } from '../elements/element';
 
 export class FilterComponent implements OnInit {
   elements: Element[];
+  filter: Filter;
 
   constructor(private _elementService: ElementService) {
   }
 
   ngOnInit() {
     this.elements = this._elementService.elements;
-    this._elementService.highlightElement(2);
+    this.filter = {
+      groupBlock: [],
+      standardState: 'any'
+    };
   }
 
-  highlight(): void {
+  highlightElements(): void {
     for (let i = 0; i < this.elements.length; i++) {
-      if (this.elements[i].groupBlock === 'transition metal') {
+      const element = this.elements[i];
+
+      const elementInGroupBlock = this.filter.groupBlock.length === 0 ? 
+      true : 
+      this.filter.groupBlock.some(
+        groupBlock => groupBlock === element.groupBlock
+      );
+
+      const elementInState = this.filter.standardState === 'any' ? 
+        true : 
+        this.filter.standardState === element.standardState;
+
+      if (elementInGroupBlock && elementInState) {
         this._elementService.highlightElement(i);
       }
     }
