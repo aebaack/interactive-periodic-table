@@ -10,25 +10,27 @@
         <div class="hover-view">
             <!--info box-->
             <div id="flex-container">
-                <div id="placeholder" class="row">Velcomen to Ze Periodics Tabel</div>
+                <div id="topPortion"><p id = "placeholder">Velcomen to Ze Periodics Tabel</p>
+                    <span id="atomicMass" *ngIf="element && element.atomicMass">Atomic Mass: {{ element.atomicMass }} </span>
+                </div>
+
                 <div id="bottomPortion">
+                    <div id = "elementInfo">
+                        <div>
+                            <!--<div  *ngIf="element && element.atomicMass">Atomic Mass: {{ element.atomicMass }} </div>-->
+                            <div  *ngIf="element && element.eletronicConfiguration">Electronic Configuration: {{ element.electronicConfiguration }} </div>
+                            <div  *ngIf="element && element.electronegativity">Electronegativity: {{ element.electronegativity }} </div>
+                            <div  *ngIf="element && element.oxidationStates">Oxidation States: {{ element.oxidationStates }} </div>
+                            <div  *ngIf="element && element.yearDiscovered">Year Discovered: {{ element.yearDiscovered }} </div>
+                            <div  *ngIf="element && element.meltingPoint">Melting/Boiling Point: {{ element.meltingPoint }} | {{ element.boilingPoint }} </div>
+                        </div>
+                    </div>
                     <div id="element" *ngIf="element">
                         <div id="atomicNumber">{{ element.atomicNumber }}</div>
                         <div id="symbol">{{ element.symbol }}</div>
                     </div>    
                 </div>
-                <!--<div class="flex-item" *ngIf="element"> {{ element.name }} ({{element.symbol}})</div>
-                <div class="flex-item" *ngIf="element"> {{ element.atomicNumber }} </div>
-                <br>
-                <div class="flex-item" *ngIf="element"> {{ element.atomicMass }} </div>
-                <br>
-                <div class="flex-item" *ngIf="element"> {{ element.electronicConfiguration }} </div>
-                <br>
-                <div class="flex-item" *ngIf="element"> {{ element.electronegativity }} </div>
-                <div class="flex-item" *ngIf="element"> {{ element.oxidationStates }} </div>
-                <div class="flex-item" *ngIf="element"> {{ element.yearDiscovered }} </div>
-                <div class="flex-item" *ngIf="element"> {{ element.meltingPoint }} </div>
-                <div class="flex-item" *ngIf="element"> {{ element.boilingPoint }} </div>-->
+                
             </div>
         </div>
         <div class="element blank"></div>

@@ -34,21 +34,23 @@
 }
 
 #flex-container {
-    /*display: flex;*/
     height: 300%;
     background-color: orange;
-    font-size: 50px;
+    font-size: 30px;
 }
 
-/*.flex-item {
-    display: inline-flex;
-}*/
-
 #placeholder {
-    height: 30%;
-    width:100%
-    background-color: lime;
-    display:block;
+    float:left;
+}
+
+#topPortion {
+    height: 33%;
+    width:100%;
+    background-color: lime; 
+}
+
+#atomicMass {
+    float:right;
 }
 
 #bottomPortion {
@@ -60,15 +62,17 @@
 
 #element {
     width: 20%; 
-    height: 66%; 
+    height: 100%; 
     border: 1px solid black;
     border-radius: 5%;
     background-color: blue;
+    float: right;
+    font-size: 5vw;
 
 }
 
 #atomicNumber {
-    font-size: 0.5em;
+    font-size: 1.5vw;
     padding-top: 5%; 
     padding-left: 5%;
     background-color: green; 
@@ -76,7 +80,17 @@
 
 
 #symbol {
-    font-size: 1.5em;
+    height: 66%;
     text-align: center;
     background-color: yellow;
+}
+
+#elementInfo {
+    width: 80%;
+    height: 100%;
+    background-color: teal;
+    float: left;
+    font-size: 1.5vw;
+    padding-left: 30px;
+    padding-top: 15px;
 }
