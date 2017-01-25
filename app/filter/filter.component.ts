@@ -63,20 +63,39 @@ export class FilterComponent implements OnInit {
 
   addGroupBlock(groupBlock: string): void {
     if (groupBlock === 'nonmetal') {
-      this.filter.groupBlock = ['noble gas', 'halogen', 'nonmetal'];
-      return this.highlightElements();
+      this.highlightAllMetals();
     } else if (groupBlock === 'metal') {
-      this.filter.groupBlock = ['transition metal', 'alkaline earth metal', 'alkali metal', 'lanthanoid', 'actinoid', 'metal'];
-      return this.highlightElements();
-    }
-
-    const groupBlockAlreadyInArray = this.filter.groupBlock.some(
-      filterGroupBlock => filterGroupBlock === groupBlock
-    );
-    if (!groupBlockAlreadyInArray) {
+      this.highlightAllNonMetals();
+    } else if (!this.groupBlockAlreadyInArray(groupBlock)) {
       this.filter.groupBlock.push(groupBlock);
-      this.highlightElements();
     }
+    this.highlightElements();
+  }
+
+  groupBlockAlreadyInArray(groupBlock: string): boolean {
+    return this.filter.groupBlock
+      .some(filterGroupBlock => filterGroupBlock === groupBlock)
+  }
+
+  highlightAllMetals(): void {
+    this.filter.groupBlock = [
+      'halogen', 
+      'noble gas', 
+      'nonmetal'
+    ];
+    // this.highlightElements();
+  }
+
+  highlightAllNonMetals(): void {
+    this.filter.groupBlock = [
+      'actinoid', 
+      'alkaline earth metal', 
+      'alkali metal', 
+      'lanthanoid', 
+      'metal',
+      'transition metal' 
+    ];
+    // this.highlightElements();
   }
 
   addStandardState(standardState: string): void {
