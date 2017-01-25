@@ -18,6 +18,9 @@ export class ElementComponent implements DoCheck {
 
   elementStyle: Object = {};
 
+  // Implement DoCheck instead of OnChanges because OnChanges will not detect
+  // change on a property of elementData, it will only detect if elementData
+  // itself is changed
   ngDoCheck() {
     if (this.elementData.highlight) {
       this.elementStyle = {'background-color': 'pink'};
