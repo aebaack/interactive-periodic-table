@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit  } from '@angular/core';
+import { Component, Input, Output, EventEmitter, DoCheck  } from '@angular/core';
 import { Element } from './element';
 
 @Component({
@@ -9,7 +9,7 @@ import { Element } from './element';
 
 })
 
-export class ElementComponent implements OnInit {
+export class ElementComponent implements DoCheck {
   @Input() elementData: Element;
   // ^ exposes elementData property to parent component, listens for parent component to send data to child
 
@@ -18,9 +18,14 @@ export class ElementComponent implements OnInit {
 
   elementStyle: Object = {};
 
-  ngOnInit(): void {
+  // Implement DoCheck instead of OnChanges because OnChanges will not detect
+  // change on a property of elementData, it will only detect if elementData
+  // itself is changed
+  ngDoCheck() {
     if (this.elementData.highlight) {
       this.elementStyle = {'background-color': 'pink'};
+    } else {
+      this.elementStyle = {'background-color': 'transparent'};
     }
   }
 
