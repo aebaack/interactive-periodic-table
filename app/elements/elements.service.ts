@@ -20,4 +20,8 @@ export class ElementService {
   highlightElement(index: number): void {
     this.elements[index].highlight = true;
   }
+
+  unhighlightElement(index: number): void {
+    this.elements[index].highlight = false;
+  }
 }

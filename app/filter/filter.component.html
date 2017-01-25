@@ -1,3 +1,9 @@
-<button (click)="highlightElements()">Transition Metals</button>
+<button (click)="addGroupBlock('transition metal')">Transition Metals</button>
+<button (click)="addGroupBlock('noble gas')">Noble Gas</button>
+
+<button (click)="addStandardState('solid')">Solid</button>
+<button (click)="addStandardState('liquid')">Liquid</button>
+<button (click)="addStandardState('gas')">Gas</button>
+
 {{filter.groupBlock}}
 {{filter.standardState}}

@@ -41,7 +41,24 @@ export class FilterComponent implements OnInit {
 
       if (elementInGroupBlock && elementInState) {
         this._elementService.highlightElement(i);
+      } else {
+        this._elementService.unhighlightElement(i);
       }
     }
+  }
+
+  addGroupBlock(groupBlock: string): void {
+    const groupBlockAlreadyInArray = this.filter.groupBlock.some(
+      filterGroupBlock => filterGroupBlock === groupBlock
+    );
+    if (!groupBlockAlreadyInArray) {
+      this.filter.groupBlock.push(groupBlock);
+      this.highlightElements();
+    }
+  }
+
+  addStandardState(standardState: string): void {
+    this.filter.standardState = standardState;
+    this.highlightElements();
   }
 }
