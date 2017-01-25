@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges  } from '@angular/core';
+import { Component, Input, Output, EventEmitter, DoCheck  } from '@angular/core';
 import { Element } from './element';
 
 @Component({
@@ -9,7 +9,7 @@ import { Element } from './element';
 
 })
 
-export class ElementComponent implements OnChanges {
+export class ElementComponent implements DoCheck {
   @Input() elementData: Element;
   // ^ exposes elementData property to parent component, listens for parent component to send data to child
 
@@ -18,15 +18,15 @@ export class ElementComponent implements OnChanges {
 
   elementStyle: Object = {};
 
-  ngOnChanges(): void {
-    console.log('this ran');
+  ngDoCheck() {
     if (this.elementData.highlight) {
       this.elementStyle = {'background-color': 'pink'};
+    } else {
+      this.elementStyle = {'background-color': 'transparent'};
     }
   }
 
   onHover(): void {
-    console.log(this.elementData);
     this.elementHovered.emit(this.elementData);
   }
   // ^ sends data into emit channel to be picked up by parent component
