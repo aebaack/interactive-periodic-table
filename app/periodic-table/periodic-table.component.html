@@ -10,8 +10,16 @@
         <div class="hover-view">
             <!--info box-->
             <div id="flex-container">
-                <div class="flex-item" *ngIf="element"> {{ element.name }} </div>
+                <div id="placeholder">Velcomen to Ze Periodics Tabel</div>
+                <div class="flex-item" *ngIf="element"> {{ element.name }} ({{element.symbol}})</div>
                 <div class="flex-item" *ngIf="element"> {{ element.atomicNumber }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.atomicMass }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.electronicConfiguration }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.electronegativity }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.oxidationStates }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.yearDiscovered }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.meltingPoint }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.boilingPoint }} </div>
             </div>
         </div>
         <div class="element blank"></div>
