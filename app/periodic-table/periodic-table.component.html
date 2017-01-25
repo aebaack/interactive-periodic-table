@@ -17,12 +17,11 @@
                 <div id="bottomPortion">
                     <div id = "elementInfo">
                         <div>
-                            <!--<div  *ngIf="element && element.atomicMass">Atomic Mass: {{ element.atomicMass }} </div>-->
                             <div  *ngIf="element && element.eletronicConfiguration">Electronic Configuration: {{ element.electronicConfiguration }} </div>
                             <div  *ngIf="element && element.electronegativity">Electronegativity: {{ element.electronegativity }} </div>
                             <div  *ngIf="element && element.oxidationStates">Oxidation States: {{ element.oxidationStates }} </div>
-                            <div  *ngIf="element && element.yearDiscovered">Year Discovered: {{ element.yearDiscovered }} </div>
                             <div  *ngIf="element && element.meltingPoint">Melting/Boiling Point: {{ element.meltingPoint }} | {{ element.boilingPoint }} </div>
+                            <div  *ngIf="element && element.yearDiscovered">Year Discovered: {{ element.yearDiscovered }} </div>
                         </div>
                     </div>
                     <div id="element" *ngIf="element">
