@@ -27,11 +27,11 @@ export class FilterComponent implements OnInit {
   highlightElements(): void {
     for (let i = 0; i < this.elements.length; i++) {
       const element = this.elements[i];
-      const hasFilterParameters = !this.noFilterParameters();
+      const filterHasParameters = this.filterHasParameters();
       const elementInGroupBlock = this.elementIsInGroupBlock(element);
       const elementInState = this.elementIsInStandardState(element);
       
-      if (hasFilterParameters && elementInGroupBlock && elementInState) {
+      if (filterHasParameters && elementInGroupBlock && elementInState) {
         this._elementService.highlightElement(i);
       } else {
         this._elementService.unhighlightElement(i);
@@ -39,9 +39,9 @@ export class FilterComponent implements OnInit {
     }
   }
 
-  noFilterParameters(): boolean {
-    return this.filter.groupBlock.length === 0 && 
-      this.filter.standardState === 'any';
+  filterHasParameters(): boolean {
+    return this.filter.groupBlock.length !== 0 || 
+      this.filter.standardState !== 'any';
   }
 
   elementIsInGroupBlock(element: Element) {
