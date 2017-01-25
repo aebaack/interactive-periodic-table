@@ -35,21 +35,32 @@ export class FilterComponent implements OnInit {
 
       const element = this.elements[i];
 
-      const elementInGroupBlock = this.filter.groupBlock.length === 0 ? 
-      true : 
-      this.filter.groupBlock.some(
-        groupBlock => groupBlock === element.groupBlock
-      );
+      const elementInGroupBlock = this.elementIsInGroupBlock(element);
 
-      const elementInState = this.filter.standardState === 'any' ? 
-        true : 
-        this.filter.standardState === element.standardState;
+      const elementInState = this.elementIsInStandardState(element);
       
       if (elementInGroupBlock && elementInState) {
         this._elementService.highlightElement(i);
       } else {
         this._elementService.unhighlightElement(i);
       }
+    }
+  }
+
+  elementIsInGroupBlock(element: Element) {
+    if (this.filter.groupBlock.length === 0) {
+      return true;
+    } else {
+      return this.filter.groupBlock
+        .some(groupBlock => groupBlock === element.groupBlock);
+    }
+  }
+
+  elementIsInStandardState(element: Element) {
+    if (this.filter.standardState === 'any') {
+      return true;
+    } else {
+      return this.filter.standardState === element.standardState;
     }
   }
 
