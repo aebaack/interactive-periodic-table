@@ -27,6 +27,12 @@ export class FilterComponent implements OnInit {
 
   highlightElements(): void {
     for (let i = 0; i < this.elements.length; i++) {
+      
+      if (this.filter.groupBlock.length === 0 && this.filter.standardState === 'any') {
+        this._elementService.unhighlightElement(i);
+        continue;
+      }
+
       const element = this.elements[i];
 
       const elementInGroupBlock = this.filter.groupBlock.length === 0 ? 
@@ -38,7 +44,7 @@ export class FilterComponent implements OnInit {
       const elementInState = this.filter.standardState === 'any' ? 
         true : 
         this.filter.standardState === element.standardState;
-
+      
       if (elementInGroupBlock && elementInState) {
         this._elementService.highlightElement(i);
       } else {
@@ -48,6 +54,14 @@ export class FilterComponent implements OnInit {
   }
 
   addGroupBlock(groupBlock: string): void {
+    if (groupBlock === 'nonmetal') {
+      this.filter.groupBlock = ['noble gas', 'halogen', 'nonmetal'];
+      return this.highlightElements();
+    } else if (groupBlock === 'metal') {
+      this.filter.groupBlock = ['transition metal', 'alkaline earth metal', 'alkali metal', 'lanthanoid', 'actinoid', 'metal'];
+      return this.highlightElements();
+    }
+
     const groupBlockAlreadyInArray = this.filter.groupBlock.some(
       filterGroupBlock => filterGroupBlock === groupBlock
     );
@@ -59,6 +73,12 @@ export class FilterComponent implements OnInit {
 
   addStandardState(standardState: string): void {
     this.filter.standardState = standardState;
+    this.highlightElements();
+  }
+
+  clearFilter(): void {
+    this.filter.groupBlock = [];
+    this.filter.standardState = 'any';
     this.highlightElements();
   }
 }
