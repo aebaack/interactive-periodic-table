@@ -11,15 +11,22 @@
             <!--info box-->
             <div id="flex-container">
                 <div id="placeholder">Velcomen to Ze Periodics Tabel</div>
-                <div class="flex-item" *ngIf="element"> {{ element.name }} ({{element.symbol}})</div>
+                <div *ngIf="element" id='elementHoverHeader'>{{ element.name }}</div>
+                <br>
+                <pt-element *ngIf="element" [elementData]="getElement(element.atomicNumber)" id="elementHoverView"></pt-element>
+                <!--<div class="flex-item" *ngIf="element"> {{ element.name }} ({{element.symbol}})</div>-->
+                <!--<br>
                 <div class="flex-item" *ngIf="element"> {{ element.atomicNumber }} </div>
+                <br>
                 <div class="flex-item" *ngIf="element"> {{ element.atomicMass }} </div>
+                <br>
                 <div class="flex-item" *ngIf="element"> {{ element.electronicConfiguration }} </div>
+                <br>
                 <div class="flex-item" *ngIf="element"> {{ element.electronegativity }} </div>
                 <div class="flex-item" *ngIf="element"> {{ element.oxidationStates }} </div>
                 <div class="flex-item" *ngIf="element"> {{ element.yearDiscovered }} </div>
                 <div class="flex-item" *ngIf="element"> {{ element.meltingPoint }} </div>
-                <div class="flex-item" *ngIf="element"> {{ element.boilingPoint }} </div>
+                <div class="flex-item" *ngIf="element"> {{ element.boilingPoint }} </div>-->
             </div>
         </div>
         <div class="element blank"></div>
