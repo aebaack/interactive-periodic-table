@@ -9,7 +9,6 @@ import { Filter } from './filter';
   templateUrl: 'filter.component.html',
     styleUrls: ['filter.component.css'] 
 })
-
 export class FilterComponent implements OnInit {
   elements: Element[];
   filter: Filter;
@@ -27,24 +26,22 @@ export class FilterComponent implements OnInit {
 
   highlightElements(): void {
     for (let i = 0; i < this.elements.length; i++) {
-      
-      if (this.filter.groupBlock.length === 0 && this.filter.standardState === 'any') {
-        this._elementService.unhighlightElement(i);
-        continue;
-      }
-
       const element = this.elements[i];
-
+      const hasFilterParameters = !this.noFilterParameters();
       const elementInGroupBlock = this.elementIsInGroupBlock(element);
-
       const elementInState = this.elementIsInStandardState(element);
       
-      if (elementInGroupBlock && elementInState) {
+      if (hasFilterParameters && elementInGroupBlock && elementInState) {
         this._elementService.highlightElement(i);
       } else {
         this._elementService.unhighlightElement(i);
       }
     }
+  }
+
+  noFilterParameters(): boolean {
+    return this.filter.groupBlock.length === 0 && 
+      this.filter.standardState === 'any';
   }
 
   elementIsInGroupBlock(element: Element) {
