@@ -10,12 +10,14 @@
         <div class="hover-view">
             <!--info box-->
             <div id="flex-container">
-                <div id="placeholder">Velcomen to Ze Periodics Tabel</div>
-                <div *ngIf="element" id='elementHoverHeader'>{{ element.name }}</div>
-                <br>
-                <pt-element *ngIf="element" [elementData]="getElement(element.atomicNumber)" id="elementHoverView"></pt-element>
-                <!--<div class="flex-item" *ngIf="element"> {{ element.name }} ({{element.symbol}})</div>-->
-                <!--<br>
+                <div id="placeholder" class="row">Velcomen to Ze Periodics Tabel</div>
+                <div id="bottomPortion">
+                    <div id="element" *ngIf="element">
+                        <div id="atomicNumber">{{ element.atomicNumber }}</div>
+                        <div id="symbol">{{ element.symbol }}</div>
+                    </div>    
+                </div>
+                <!--<div class="flex-item" *ngIf="element"> {{ element.name }} ({{element.symbol}})</div>
                 <div class="flex-item" *ngIf="element"> {{ element.atomicNumber }} </div>
                 <br>
                 <div class="flex-item" *ngIf="element"> {{ element.atomicMass }} </div>
