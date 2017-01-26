@@ -4,6 +4,10 @@ h1 {
     font-size: 250%;
 }
 
+body {
+    background-color: #f5f5f5;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
