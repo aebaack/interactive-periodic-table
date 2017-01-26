@@ -13,11 +13,14 @@ export class FilterButtonComponent implements OnInit, OnChanges {
   @Input() filterState: string;
   
   buttonName: string;
-  buttonHighlighted: boolean = true;
-  elementStyle: Object;
+  buttonHighlighted: boolean;
+  isMainGroup: boolean = false;;
 
   ngOnInit(): void {
     this.buttonName = this.returnButtonName(this.name);
+    if (this.buttonName === 'nonmetals' || this.buttonName === 'metals' || this.buttonName === 'metalloids') {
+      this.isMainGroup = true;
+    }
   }
 
   // Needs huge refactoring
@@ -33,9 +36,9 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     } else if (this.filterGroupBlocks.length > 1) {
       const isNonMetal = this.filterGroupBlocks
         .some(groupBlock => groupBlock === 'noble gas');
-      if (isNonMetal && this.name === 'nonmetal') {
+      if (isNonMetal && this.name === 'allNonMetal') {
         this.buttonHighlighted = true;
-      } else if (!isNonMetal && this.name === 'metal') {
+      } else if (!isNonMetal && this.name === 'allMetal') {
         this.buttonHighlighted = true;
       } else {
         this.buttonHighlighted = false;
@@ -54,41 +57,26 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     }
   }
 
-  // TODO:
-  // It would be much better to simply capitalize and add an 's'
-  // To any name that easily pluralizes
   returnButtonName(groupName: string): string {
-    switch (groupName) {
+    switch(groupName) {
       case 'noble gas':
-        return 'Noble Gases';
-      case 'halogen':
-        return'Halogens';
-      case 'nonmetal':
-        return 'Other';   
-      case 'actinoid':
-        return 'Actinoids';  
-      case 'alkali metal':
-        return 'Alkali Metals'; 
-      case 'alkaline earth metal':
-        return 'Alkaline Earth Metals'; 
-      case 'lanthanoid':
-        return 'Lanthanoids'; 
-      case 'transition metal':
-        return 'Transition Metals'; 
-      case 'metal':
-        return 'Other';
-      case 'metalloid':
-        return 'Metalloids'; 
+        return 'noble gases';
+      case 'allNonMetal':
+        return 'nonmetals'
+      case 'allMetal':
+        return 'metals';
+      // fallthrough
       case 'solid':
-        return 'Solid';
       case 'liquid':
-        return 'Liquid';
       case 'gas':
-        return 'Gas';
+        return groupName;
+      // fallthrough
+      case 'nonmetal':
+      case 'metal':
       case '':
-        return 'Other';  
+        return 'other';
       default:
-        break;
+        return groupName + 's';
     }
   }
   
