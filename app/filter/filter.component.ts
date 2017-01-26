@@ -57,6 +57,8 @@ export class FilterComponent implements OnInit {
       
       if (filterHasParameters && elementInGroupBlock && elementInState) {
         this._elementService.highlightElement(i);
+      } else if (!filterHasParameters) {
+        this._elementService.highlightElement(i);
       } else {
         this._elementService.unhighlightElement(i);
       }
