@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementService } from '../elements/elements.service';
+import { BohrModalComponent } from '../bohr-modal/bohr-modal.component';
 import { Element } from '../elements/element';
 
 declare var Atom: any;
@@ -23,6 +24,7 @@ export class PeriodicTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this._elementService.getElements();
     this.elements = this._elementService.elements;
 
@@ -32,6 +34,9 @@ export class PeriodicTableComponent implements OnInit {
     });
 
     this.showModal = false;
+
+    console.log(this.showModal, "SHOW ON INIT");
+    
   }
 
   setHeight(): number {
@@ -48,9 +53,18 @@ export class PeriodicTableComponent implements OnInit {
 
   }
   // ^ receives element data from child component
+  onNotify(modalVisibility: any): void {
+    console.log(modalVisibility, "ON CLOSE CLICK");
+    this.showModal = modalVisibility;
+  }
 
   toggleBohrModal(): void {
+    console.log("TABLE CLICK");    
+    
     this.showModal = !this.showModal;
+
+    console.log(this.showModal, "MODAL VIS AFTER CLICK");
+
     document.getElementById("bohr-model-container").innerHTML = ""; //^clearing html model
 
     this.Atom = new Atom({

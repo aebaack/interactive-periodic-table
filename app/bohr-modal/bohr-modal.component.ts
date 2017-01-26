@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ElementService } from '../elements/elements.service';
 
 @Component({
@@ -12,5 +12,10 @@ export class BohrModalComponent {
     
     @Input() showBohrModal: boolean;
 
+    @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+    closeClick() {
+      this.showBohrModal = !this.showBohrModal;
+      this.notify.emit(this.showBohrModal);
+    }
 }

@@ -10,7 +10,6 @@
     background-color: #223388;
 }
 
-
 #info-left {
     height: 100%;
     width: 40%;
@@ -38,4 +37,13 @@
   height: 100vh;
   z-index: 1;
   background-color: rgba(10,30,40, .8);
+}
+
+#closeButton {
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    color: white;
+    float: right;
+    border-radius: 5px;
 }
