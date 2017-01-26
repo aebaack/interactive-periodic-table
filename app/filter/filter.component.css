@@ -5,50 +5,30 @@ h1 {
 .filter-box {
   /*border: black solid 1px;*/
   width: 100%;
-  padding: 16px;
+  padding-top: 2vh;
+  height: 100vh;
+  background-color: #fff;
+  /*padding: 16px;*/
 }
 
 button {
-  /*padding: .2% .4%;*/
-  /*margin: 6px 0px; */
-  font-size: 1.2vw;
-  border-radius: 5px;
-  /*border: 2px solid red;*/
-  background-color: red;
-  color: white;
-  transition-duration: .5s;
+  font-size: 1.5vw;
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  transition-duration: .2s;
   width: 100%;
   font-family: arial;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
+  text-align: left;
+  padding-left: 20px;
+  /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
 }
 
 button:hover {
-  background-color: red;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.nonMetals button {
-  /*border: 2px solid blue;*/
-  background-color: blue;
-}
-
-.nonMetals button:hover {
-  background-color: blue;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
-}
-
-.metals button {
-  /*border: 2px solid green;*/
-  background-color: green;
-}
-
-.metals button:hover {
-  background-color: green;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
+  /*background-color: red;*/
+  background-color: #bdbdbd;
+  /*box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
 }
 
 .group-box {
@@ -58,11 +38,18 @@ button:hover {
   flex-direction: column;
 }
 
+h3 {
+  padding-left: 10px;
+  font-size: 1.2em;
+  font-family: arial;
+}
+
 .filters {
   /*flex-grow: 1;*/
   /*border: solid 1px blue;*/
+  /*padding-left: 16px;*/
   display: flex;
   flex-direction: column;
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
 }
