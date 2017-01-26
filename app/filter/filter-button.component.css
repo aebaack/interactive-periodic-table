@@ -9,12 +9,14 @@ button {
   cursor: pointer;
   text-align: left;
   padding-left: 20px;
+  color: rgba(255, 255, 255, 0.87);
   /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
 }
 
 button:hover {
   /*background-color: red;*/
-  background-color: #bdbdbd;
+  background-color: #CFD8DC;
+  color: #212121;
   /*box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
 }
 
@@ -23,5 +25,6 @@ button:focus {
 }
 
 .highlighted-button {
-  background-color: #bdbdbd;
+  background-color: #CFD8DC;
+  color: #212121
 }

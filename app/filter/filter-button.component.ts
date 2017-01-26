@@ -5,7 +5,6 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
   selector: 'pt-button',
   templateUrl: 'filter-button.component.html',
     styleUrls: ['filter-button.component.css'] 
-
 })
 
 export class FilterButtonComponent implements OnInit, OnChanges {
