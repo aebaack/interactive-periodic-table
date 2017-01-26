@@ -71,27 +71,52 @@ export class FilterComponent implements OnInit {
   // Adds a new groupBlock to the group block filter parameters
   // If the groupBlock passed in is 'nonmetal', then all non-metals are added
   // If the groupBlock passed in is 'metal', then all metals are added
+  // Definitely needs to be refactored, but I'm rushed
   addGroupBlock(event: MouseEvent, groupBlock: string): void {
     this.highlightButton(event);
     if (groupBlock === 'nonmetal') {
-      this.highlightAllMetals();
+      if (this.allElementsAlreadySelected('nonmetal')) {
+        this.filter.groupBlock = [];
+      } else {
+        this.filter.groupBlock = this.returnAllNonMetals();
+      }
     } else if (groupBlock === 'metal') {
-      this.highlightAllNonMetals();
-    } else if (!this.groupBlockAlreadyInArray(groupBlock)) {
-      this.filter.groupBlock.push(groupBlock);
+      this.filter.groupBlock = this.returnAllNonMetals();
+    } else if (!this.groupBlockAlreadySelected(groupBlock)) {
+      this.filter.groupBlock = [groupBlock];
+    } else {
+      this.filter.groupBlock = [];
     }
     this.highlightElements();
   }
 
   // Returns true if the groupBlock is already a filter parameter
-  groupBlockAlreadyInArray(groupBlock: string): boolean {
-    return this.filter.groupBlock
-      .some(filterGroupBlock => filterGroupBlock === groupBlock)
+  groupBlockAlreadySelected(groupBlock: string): boolean {
+    if (this.filter.groupBlock.length === 0) {
+      return false;
+    } else {
+      return this.filter.groupBlock
+        .every(filterGroupBlock => filterGroupBlock === groupBlock)   
+    }
+  }
+
+  allElementsAlreadySelected(elementType: string): boolean {
+    const elements = elementType === 'nonmetal' ?
+      this.returnAllNonMetals() :
+      this.returnAllMetals();
+    if (this.filter.groupBlock.length === 0) {
+      return false;
+    } else {
+      return elements.every(element => {
+        return this.filter.groupBlock
+          .some(groupBlock => groupBlock === element);
+      });
+    }
   }
 
   // Sets the group block filter to include all non-metal elements
-  highlightAllMetals(): void {
-    this.filter.groupBlock = [
+  returnAllNonMetals(): string[] {
+    return [
       'halogen', 
       'noble gas', 
       'nonmetal'
@@ -99,8 +124,8 @@ export class FilterComponent implements OnInit {
   }
 
   // Sets the group block filter to include all metal elements
-  highlightAllNonMetals(): void {
-    this.filter.groupBlock = [
+  returnAllMetals(): string[] {
+    return [
       'actinoid', 
       'alkaline earth metal', 
       'alkali metal', 
