@@ -27,6 +27,19 @@ export class FilterButtonComponent implements OnInit, OnChanges {
       } else {
         this.elementStyle = {'background-color': 'transparent'};
       }
+    } else if (this.filterGroupBlocks.length > 1) {
+      const isNonMetal = this.filterGroupBlocks
+        .some(groupBlock => groupBlock === 'noble gas');
+      if (isNonMetal && this.name === 'nonmetal') {
+        this.elementStyle = {'background-color': 'red'};
+      } else if (!isNonMetal && this.name === 'metal') {
+        this.elementStyle = {'background-color': 'red'};
+      } else {
+        this.elementStyle = {'background-color': 'transparent'};
+      }
+    }
+    else {
+      this.elementStyle = {'background-color': 'transparent'};
     }
   }
 

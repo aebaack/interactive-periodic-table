@@ -78,7 +78,7 @@ export class FilterComponent implements OnInit {
   // If the groupBlock passed in is 'metal', then all metals are added
   // Definitely needs to be refactored, but I'm rushed
   addGroupBlock(event: MouseEvent, groupBlock: string): void {
-    this.highlightButton(event);
+    // this.highlightButton(event);
     if (groupBlock === 'nonmetal' || groupBlock === 'metal') {
       if (this.allElementsAlreadySelected(groupBlock)) {
         this.filter.groupBlock = [];
@@ -162,7 +162,7 @@ export class FilterComponent implements OnInit {
 
   // Sets the standardState filter parameter to the string passed in
   addStandardState(event: MouseEvent, standardState: string): void {
-    this.highlightButton(event);
+    // this.highlightButton(event);
     this.filter.standardState = standardState;
     this.highlightElements();
   }
