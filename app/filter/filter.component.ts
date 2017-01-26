@@ -71,46 +71,93 @@ export class FilterComponent implements OnInit {
   // Adds a new groupBlock to the group block filter parameters
   // If the groupBlock passed in is 'nonmetal', then all non-metals are added
   // If the groupBlock passed in is 'metal', then all metals are added
-  addGroupBlock(groupBlock: string): void {
-    if (groupBlock === 'nonmetal') {
-      this.highlightAllMetals();
-    } else if (groupBlock === 'metal') {
-      this.highlightAllNonMetals();
-    } else if (!this.groupBlockAlreadyInArray(groupBlock)) {
-      this.filter.groupBlock.push(groupBlock);
+  // Definitely needs to be refactored, but I'm rushed
+  addGroupBlock(event: MouseEvent, groupBlock: string): void {
+    this.highlightButton(event);
+    if (groupBlock === 'nonmetal' || groupBlock === 'metal') {
+      if (this.allElementsAlreadySelected(groupBlock)) {
+        this.filter.groupBlock = [];
+      } else {
+        this.filter.groupBlock = this.returnAllElements(groupBlock);
+      }
+    } else if (!this.groupBlockAlreadySelected(groupBlock)) {
+      this.filter.groupBlock = [groupBlock];
+    } else {
+      this.filter.groupBlock = [];
     }
     this.highlightElements();
   }
 
   // Returns true if the groupBlock is already a filter parameter
-  groupBlockAlreadyInArray(groupBlock: string): boolean {
-    return this.filter.groupBlock
-      .some(filterGroupBlock => filterGroupBlock === groupBlock)
+  groupBlockAlreadySelected(groupBlock: string): boolean {
+    if (this.filter.groupBlock.length === 0) {
+      return false;
+    } else {
+      return this.filter.groupBlock
+        .every(filterGroupBlock => filterGroupBlock === groupBlock)   
+    }
   }
 
-  // Sets the group block filter to include all non-metal elements
-  highlightAllMetals(): void {
-    this.filter.groupBlock = [
-      'halogen', 
-      'noble gas', 
-      'nonmetal'
-    ];
+  // Returns true if all of the elements of the specified type are already
+  // selected
+  allElementsAlreadySelected(elementType: string): boolean {
+    const elements = elementType === 'nonmetal' ?
+      this.returnAllElements('nonmetal') :
+      this.returnAllElements('metal');
+    if (this.filter.groupBlock.length === 0) {
+      return false;
+    } else {
+      return elements.every(element => {
+        return this.filter.groupBlock
+          .some(groupBlock => groupBlock === element);
+      });
+    }
   }
 
-  // Sets the group block filter to include all metal elements
-  highlightAllNonMetals(): void {
-    this.filter.groupBlock = [
-      'actinoid', 
-      'alkaline earth metal', 
-      'alkali metal', 
-      'lanthanoid', 
-      'metal',
-      'transition metal' 
-    ];
+  // Returns an array of all of the elements of the specified type
+  returnAllElements(elementType: string): string[] {
+    return elementType === 'nonmetal' ?
+      [
+        'halogen', 
+        'noble gas', 
+        'nonmetal'
+      ] :
+      [
+        'actinoid', 
+        'alkaline earth metal', 
+        'alkali metal', 
+        'lanthanoid', 
+        'metal',
+        'transition metal' 
+      ];
+  }
+
+  // Highlights the target button
+  // Needs to be updated to an 'angular' way, but I don't have time right now
+  highlightButton(event: MouseEvent): void {
+    this.unhighlightButtons();
+    const button = event.target as HTMLElement;
+    if (button.style.backgroundColor !== 'gray') {
+      button.style.backgroundColor = 'gray';
+    } else {
+      button.style.backgroundColor = '#fff';
+    }
+  }
+
+  // Unhighlights all filter buttons
+  // Needs to be updated to an 'angular' way, but I don't have time right now
+  unhighlightButtons(): void {
+    const buttons = document
+      .getElementsByClassName('filter-box')[0]
+      .getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].style.backgroundColor = '#fff';
+    }
   }
 
   // Sets the standardState filter parameter to the string passed in
-  addStandardState(standardState: string): void {
+  addStandardState(event: MouseEvent, standardState: string): void {
+    this.highlightButton(event);
     this.filter.standardState = standardState;
     this.highlightElements();
   }

@@ -31,6 +31,10 @@ button:hover {
   /*box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
 }
 
+button:focus {
+  outline: none;
+}
+
 .group-box {
   /*width: 100%;*/
   /*border: 1px solid black;*/
@@ -40,8 +44,10 @@ button:hover {
 
 h3 {
   padding-left: 10px;
-  font-size: 1.2em;
+  font-size: 1.5vw;
   font-family: arial;
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 .filters {
@@ -52,4 +58,14 @@ h3 {
   flex-direction: column;
   width: 100%;
   /*text-align: center;*/
+}
+
+.mainGroup {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.clearButton {
+  padding-left: 0;
+  text-align: center;
 }
