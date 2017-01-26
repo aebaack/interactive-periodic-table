@@ -7,10 +7,11 @@ import { PeriodicTableComponent } from './periodic-table/periodic-table.componen
 import { BohrModalComponent } from './bohr-modal/bohr-modal.component';
 import { FilterComponent } from './filter/filter.component';
 import { FilterButtonComponent } from './filter/filter-button.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, ElementComponent, PeriodicTableComponent, BohrModalComponent, FilterComponent, FilterButtonComponent ],
+  declarations: [ AppComponent, ElementComponent, PeriodicTableComponent, BohrModalComponent, FilterComponent, FilterButtonComponent, CapitalizePipe ],
   bootstrap:    [ AppComponent ]
 })
 
