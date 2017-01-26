@@ -54,9 +54,6 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     }
   }
 
-  // TODO:
-  // It would be much better to simply capitalize and add an 's'
-  // To any name that easily pluralizes
   returnButtonName(groupName: string): string {
     switch(groupName) {
       case 'noble gas':
