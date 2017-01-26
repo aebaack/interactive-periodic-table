@@ -2,9 +2,9 @@
   <div class="group-box">
     <div class = "filters nonMetals">
       <button class="mainGroup" (click)="addGroupBlock($event, 'nonmetal')">Non-Metals</button>
-      <button (click)="addGroupBlock($event, 'halogen')">Halogens</button>
-      <button (click)="addGroupBlock($event, 'noble gas')">Noble Gas</button>
-      <button (click)="addGroupBlock($event, 'nonmetal')">Other</button>
+      <button class = "halogen" (click)="addGroupBlock($event, 'halogen')">Halogens</button>
+      <button class = "nobleGas" (click)="addGroupBlock($event, 'noble gas')">Noble Gas</button>
+      <button class = "nonmetal" (click)="addGroupBlock($event, 'nonmetal')">Other</button>
     </div>  
 
     <div class = "filters metals">
