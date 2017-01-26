@@ -53,50 +53,54 @@ export class PeriodicTableComponent implements OnInit {
 
     console.log(element);
     
-    switch(this.element.groupBlock) {
-      // console.log("made it into switch");
-      
-        case 'halogen':
-          topPortionColor.style.background = '#ffda00'; //orange
-          break;
-
-        case 'noble gas':
-          topPortionColor.style.background =  '#ffff00'; //yellow
-          break;
-
-        case 'nonmetal':
-          topPortionColor.style.background =  '#ffffb0'; //light yellow
-          break;
-
-        case 'actinoid':
-          topPortionColor.style.background =  '#9eff9e';  //very light green
-          break;
-
-        case 'alkali metal':
-          topPortionColor.style.background =  '#7ce348'; //light green
-          break;
-
-        case 'alkaline earth metal':
-          topPortionColor.style.background =  '#44cc77'; //green
-          break;
-
-        case 'lanthanoid':
-          topPortionColor.style.background =  '#00d060'; //green
-          break;
-
-        case 'transition metal':
-            topPortionColor.style.background =  '#0c914a'; //a bit darker green
-          break;
+    if (this.element.highlight) {
+      switch(this.element.groupBlock) {
         
-        case 'metal':
-          topPortionColor.style.background =  '#229988'; //dark green/blue
-          break;
+          case 'halogen':
+            topPortionColor.style.background = '#ffda00'; //orange
+            break;
 
-        case 'metalloid':
-          topPortionColor.style.background =  '#226688'; //drkblue
-          break;
+          case 'noble gas':
+            topPortionColor.style.background =  '#ffff00'; //yellow
+            break;
 
-        default:
+          case 'nonmetal':
+            topPortionColor.style.background =  '#ffffb0'; //light yellow
+            break;
+
+          case 'actinoid':
+            topPortionColor.style.background =  '#9eff9e';  //very light green
+            break;
+
+          case 'alkali metal':
+            topPortionColor.style.background =  '#7ce348'; //light green
+            break;
+
+          case 'alkaline earth metal':
+            topPortionColor.style.background =  '#44cc77'; //green
+            break;
+
+          case 'lanthanoid':
+            topPortionColor.style.background =  '#00d060'; //green
+            break;
+
+          case 'transition metal':
+              topPortionColor.style.background =  '#0c914a'; //a bit darker green
+            break;
+          
+          case 'metal':
+            topPortionColor.style.background =  '#229988'; //dark green/blue
+            break;
+
+          case 'metalloid':
+            topPortionColor.style.background =  '#226688'; //drkblue
+            break;
+
+          default:
+            break;
+      }
+    } else {
+      topPortionColor.style.background = "lightgray";
     }
   }
   // ^ receives element data from child component
