@@ -50,6 +50,7 @@ export class PeriodicTableComponent implements OnInit {
   hoverReceived(element: Element): void {
     this.element = element;
     document.getElementById("placeholder").innerText = this.element.name;
+    document.getElementById("welcome").innerText = "";
 
   }
   // ^ receives element data from child component
