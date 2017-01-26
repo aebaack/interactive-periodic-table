@@ -14,13 +14,13 @@
         <div class="hover-view">
             <!--info box-->
             <div id="flex-container">
-                <div id="topPortion"><p id = "placeholder">Velcomen to Ze Periodics Tabel</p>
+                <div id="topPortion"><p id = "placeholder">Welcome to Atom Superstratum!</p>
                     <span id="atomicMass" *ngIf="element && element.atomicMass">Atomic Mass: {{ element.atomicMass }} </span>
                 </div>
 
                 <div id="bottomPortion">
                     <div id = "elementInfo">
-                        <div>
+                        <div><p id = "welcome">Hello fellow Chemist! Hover over an element to view detailed information. Click on an element to see the Bohr Model. Explore Away!</p>
                             <div  *ngIf="element && element.eletronicConfiguration">Electronic Configuration: {{ element.electronicConfiguration }} </div>
                             <div  *ngIf="element && element.electronegativity">Electronegativity: {{ element.electronegativity }} </div>
                             <div  *ngIf="element && element.oxidationStates">Oxidation States: {{ element.oxidationStates }} </div>

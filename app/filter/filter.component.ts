@@ -12,6 +12,26 @@ import { Filter } from './filter';
 export class FilterComponent implements OnInit {
   elements: Element[];
   filter: Filter;
+  nonMetalNames: string[] = [
+    'noble gas',
+    'halogen',
+    'nonmetal'
+  ];
+  metalNames: string[] = [
+    'actinoid', 
+    'alkaline earth metal', 
+    'alkali metal', 
+    'lanthanoid', 
+    'transition metal',
+    'metal'
+  ];
+  metalloid: string = 'metalloid';
+  stateNames: string[] = [
+    'solid',
+    'liquid',
+    'gas',
+    ''
+  ];
 
   constructor(private _elementService: ElementService) {
   }
@@ -73,7 +93,7 @@ export class FilterComponent implements OnInit {
   // If the groupBlock passed in is 'metal', then all metals are added
   // Definitely needs to be refactored, but I'm rushed
   addGroupBlock(event: MouseEvent, groupBlock: string): void {
-    this.highlightButton(event);
+    // this.highlightButton(event);
     if (groupBlock === 'nonmetal' || groupBlock === 'metal') {
       if (this.allElementsAlreadySelected(groupBlock)) {
         this.filter.groupBlock = [];
@@ -157,8 +177,12 @@ export class FilterComponent implements OnInit {
 
   // Sets the standardState filter parameter to the string passed in
   addStandardState(event: MouseEvent, standardState: string): void {
-    this.highlightButton(event);
-    this.filter.standardState = standardState;
+    // this.highlightButton(event);
+    if (standardState === this.filter.standardState) {
+      this.filter.standardState = 'any';
+    } else {
+      this.filter.standardState = standardState;
+    }
     this.highlightElements();
   }
 

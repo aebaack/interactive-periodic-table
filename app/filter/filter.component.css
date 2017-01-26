@@ -6,28 +6,9 @@
   width: 100%;
   padding-top: 2vh;
   height: 100vh;
-  background-color: #fff;
-}
-
-button {
-  font-size: 1.5vw;
-  padding: 8px;
-  border: none;
-  background-color: transparent;
-  transition-duration: .2s;
-  width: 100%;
-  font-family: arial;
-  cursor: pointer;
-  text-align: left;
-  padding-left: 20px;
-}
-
-button:hover {
-  background-color: #bdbdbd;
-}
-
-button:focus {
-  outline: none;
+  background-color: #263238;
+  color: rgba(255, 255, 255, 0.87);
+  /*padding: 16px;*/
 }
 
 .group-box {
