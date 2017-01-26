@@ -27,30 +27,30 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     if (this.filterGroupBlocks.length === 1) {
       const filterGroup = this.filterGroupBlocks[0];
       if (filterGroup === this.name) {
-        this.elementStyle = {'background-color': 'red'};
+        this.buttonHighlighted = true;
       } else {
-        this.elementStyle = {'background-color': 'transparent'};
+        this.buttonHighlighted = false;
       }
     } else if (this.filterGroupBlocks.length > 1) {
       const isNonMetal = this.filterGroupBlocks
         .some(groupBlock => groupBlock === 'noble gas');
       if (isNonMetal && this.name === 'nonmetal') {
-        this.elementStyle = {'background-color': 'red'};
+        this.buttonHighlighted = true;
       } else if (!isNonMetal && this.name === 'metal') {
-        this.elementStyle = {'background-color': 'red'};
+        this.buttonHighlighted = true;
       } else {
-        this.elementStyle = {'background-color': 'transparent'};
+        this.buttonHighlighted = false;
       }
     }
     else {
-      this.elementStyle = {'background-color': 'transparent'};
+      this.buttonHighlighted = false;
     }
 
     if (this.name === 'solid' || this.name === 'liquid' || this.name === 'gas' || this.name === '') {
       if (this.filterState === this.name) {
-        this.elementStyle = {'background-color': 'red'};
+        this.buttonHighlighted = true;
       } else {
-        this.elementStyle = {'background-color': 'transparent'};
+        this.buttonHighlighted = false;
       }
     }
   }
