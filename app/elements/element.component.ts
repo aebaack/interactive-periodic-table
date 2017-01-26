@@ -23,8 +23,8 @@ export class ElementComponent implements DoCheck {
   // itself is changed
   ngDoCheck() {
     if (this.elementData.highlight) {
-      console.log(this.elementData.groupBlock);
-      console.log(this.elementData.standardState);
+      // console.log(this.elementData.groupBlock);
+      // console.log(this.elementData.standardState);
       
       switch(this.elementData.groupBlock) {
    
@@ -49,23 +49,18 @@ export class ElementComponent implements DoCheck {
           break;
 
         case 'alkaline earth metal':
-          // this.elementStyle = {'background-color': '#00d060'} //green
           this.elementStyle = {'background-color': '#44cc77'} //green
           break;
-          
 
         case 'lanthanoid':
-          // this.elementStyle = {'background-color': '#0c914a'} //a bit darker green
           this.elementStyle = {'background-color': '#00d060'} //green
           break;
 
         case 'transition metal':
-          // this.elementStyle = {'background-color': '#00642f'} //darker green
             this.elementStyle = {'background-color': '#0c914a'} //a bit darker green
           break;
         
         case 'metal':
-          // this.elementStyle = {'background-color': '#00ffdf'} //seafoam
           this.elementStyle = {'background-color': '#229988'} //dark green/blue
           break;
 
