@@ -71,7 +71,8 @@ export class FilterComponent implements OnInit {
   // Adds a new groupBlock to the group block filter parameters
   // If the groupBlock passed in is 'nonmetal', then all non-metals are added
   // If the groupBlock passed in is 'metal', then all metals are added
-  addGroupBlock(groupBlock: string): void {
+  addGroupBlock(event: MouseEvent, groupBlock: string): void {
+    this.highlightButton(event);
     if (groupBlock === 'nonmetal') {
       this.highlightAllMetals();
     } else if (groupBlock === 'metal') {
@@ -109,8 +110,32 @@ export class FilterComponent implements OnInit {
     ];
   }
 
+  // Highlights the target button
+  // Needs to be updated to an 'angular' way, but I don't have time right now
+  highlightButton(event: MouseEvent): void {
+    this.unhighlightButtons();
+    const button = event.target as HTMLElement;
+    if (button.style.backgroundColor !== 'gray') {
+      button.style.backgroundColor = 'gray';
+    } else {
+      button.style.backgroundColor = '#fff';
+    }
+  }
+
+  // Unhighlights all filter buttons
+  // Needs to be updated to an 'angular' way, but I don't have time right now
+  unhighlightButtons(): void {
+    const buttons = document
+      .getElementsByClassName('filter-box')[0]
+      .getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].style.backgroundColor = '#fff';
+    }
+  }
+
   // Sets the standardState filter parameter to the string passed in
-  addStandardState(standardState: string): void {
+  addStandardState(event: MouseEvent, standardState: string): void {
+    this.highlightButton(event);
     this.filter.standardState = standardState;
     this.highlightElements();
   }
