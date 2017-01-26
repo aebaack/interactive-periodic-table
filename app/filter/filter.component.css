@@ -1,9 +1,8 @@
-h1 {
+/*h1 {
   color: pink;
-}
+}*/
 
 .filter-box {
-  /*border: black solid 1px;*/
   width: 100%;
   padding-top: 2vh;
   height: 100vh;
@@ -13,8 +12,6 @@ h1 {
 }
 
 .group-box {
-  /*width: 100%;*/
-  /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
 }
@@ -28,13 +25,9 @@ h3 {
 }
 
 .filters {
-  /*flex-grow: 1;*/
-  /*border: solid 1px blue;*/
-  /*padding-left: 16px;*/
   display: flex;
   flex-direction: column;
   width: 100%;
-  /*text-align: center;*/
 }
 
 .mainGroup {

@@ -23,7 +23,59 @@ export class ElementComponent implements DoCheck {
   // itself is changed
   ngDoCheck() {
     if (this.elementData.highlight) {
-      this.elementStyle = {'background-color': 'pink'};
+      console.log(this.elementData.groupBlock);
+      console.log(this.elementData.standardState);
+      
+      switch(this.elementData.groupBlock) {
+   
+        case 'halogen':
+          this.elementStyle = {'background-color': '#ffda00'} //orange
+          break;
+
+        case 'noble gas':
+          this.elementStyle = {'background-color': '#ffff00'} //yellow
+          break;
+
+        case 'nonmetal':
+          this.elementStyle = {'background-color': '#ffffb0'} //light yellow
+          break;
+
+        case 'actinoid':
+          this.elementStyle = {'background-color': '#9eff9e'}  //very light green
+          break;
+
+        case 'alkali metal':
+          this.elementStyle = {'background-color': '#7ce348'} //light green
+          break;
+
+        case 'alkaline earth metal':
+          // this.elementStyle = {'background-color': '#00d060'} //green
+          this.elementStyle = {'background-color': '#44cc77'} //green
+          break;
+          
+
+        case 'lanthanoid':
+          // this.elementStyle = {'background-color': '#0c914a'} //a bit darker green
+          this.elementStyle = {'background-color': '#00d060'} //green
+          break;
+
+        case 'transition metal':
+          // this.elementStyle = {'background-color': '#00642f'} //darker green
+            this.elementStyle = {'background-color': '#0c914a'} //a bit darker green
+          break;
+        
+        case 'metal':
+          // this.elementStyle = {'background-color': '#00ffdf'} //seafoam
+          this.elementStyle = {'background-color': '#229988'} //dark green/blue
+          break;
+
+        case 'metalloid':
+          this.elementStyle = {'background-color': '#226688'} //drkblue
+          break;
+
+        default:
+      }
+
     } else {
       this.elementStyle = {'background-color': 'transparent'};
     }
