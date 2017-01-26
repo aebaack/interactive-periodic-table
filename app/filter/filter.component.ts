@@ -12,6 +12,11 @@ import { Filter } from './filter';
 export class FilterComponent implements OnInit {
   elements: Element[];
   filter: Filter;
+  nonMetalNames: string[] = [
+    'noble gas',
+    'halogen',
+    'nonmetal'
+  ];
 
   constructor(private _elementService: ElementService) {
   }

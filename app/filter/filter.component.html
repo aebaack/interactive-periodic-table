@@ -1,6 +1,9 @@
 <div class="filter-box">
   <div class="group-box">
     <div class = "filters nonMetals">
+      <div *ngFor="let name of nonMetalNames">
+        <pt-button (click)="addGroupBlock($event, name)" class="mainGroup" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
+      </div>
       <button class="mainGroup" (click)="addGroupBlock($event, 'nonmetal')">Non-Metals</button>
       <button (click)="addGroupBlock($event, 'halogen')">Halogens</button>
       <button (click)="addGroupBlock($event, 'noble gas')">Noble Gas</button>
