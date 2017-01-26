@@ -14,6 +14,7 @@ export class FilterButtonComponent implements OnInit, OnChanges {
   @Input() filterState: string;
   
   buttonName: string;
+  buttonHighlighted: boolean = true;
   elementStyle: Object;
 
   ngOnInit(): void {

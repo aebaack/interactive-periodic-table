@@ -21,3 +21,7 @@ button:hover {
 button:focus {
   outline: none;
 }
+
+.highlighted-button {
+  background-color: 'red';
+}
