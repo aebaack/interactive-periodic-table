@@ -1,32 +1,33 @@
 <div class="filter-box">
   <div class="group-box">
     <div class = "filters nonMetals">
-      <button class="mainGroup" (click)="AddGroupBlock($event, 'metal')">Non-Metals</button>
-      <!--<button (click)="addGroupBlock($event, 'nonmetal')">All</button>-->
+      <button class="mainGroup" (click)="addGroupBlock($event, 'nonmetal')">Non-Metals</button>
       <button (click)="addGroupBlock($event, 'halogen')">Halogens</button>
       <button (click)="addGroupBlock($event, 'noble gas')">Noble Gas</button>
       <button (click)="addGroupBlock($event, 'nonmetal')">Other</button>
     </div>  
 
     <div class = "filters metals">
-      <button class="mainGroup" (click)="AddGroupBlock($event, 'metal')">Metals</button>
-      <!--<button (click)="addGroupBlock($event, 'metal')">All</button>-->
-      <button (click)="addGroupBlock('actinoid')">Actinoid</button>
-      <button (click)="addGroupBlock('alkali metal')">Alkali</button>
-      <button (click)="addGroupBlock('alkaline earth metal')">Alkaline Earth</button>
-      <button (click)="addGroupBlock('lanthanoid')">Lanthanoid</button>
-      <button (click)="addGroupBlock('transition metal')">Transition</button>
-      <!--<button (click)="addGroupBlock('metalloid')">Metalloid</button>-->
+      <button class="mainGroup" (click)="addGroupBlock($event, 'metal')">Metals</button>
+      <button (click)="addGroupBlock($event, 'actinoid')">Actinoid</button>
+      <button (click)="addGroupBlock($event, 'alkali metal')">Alkali</button>
+      <button (click)="addGroupBlock($event, 'alkaline earth metal')">Alkaline Earth</button>
+      <button (click)="addGroupBlock($event, 'lanthanoid')">Lanthanoid</button>
+      <button (click)="addGroupBlock($event, 'transition metal')">Transition</button>
+      <button (click)="addGroupBlock($event, 'metal')">Other</button>
    </div>
 
-  <div class="filters state-box">
-    <h3>State</h3>
-    <!--<button class="mainGroup" (click)="AddGroupBlock($event, 'metal')">State</button>-->
-    <button (click)="addStandardState($event, 'solid')">Solid</button>  
-    <button (click)="addStandardState($event, 'liquid')">Liquid</button>
-    <button (click)="addStandardState($event, 'gas')">Gas</button>
-    <button (click)="addStandardState($event, '')">Unknown</button>
-  </div>
+   <div class="filters metalloid">
+     <button class="mainGroup" (click)="addGroupBlock($event, 'metalloid')">Metalloids</button>
+   </div>
+
+    <div class="filters state-box">
+      <h3>State</h3>
+      <button (click)="addStandardState($event, 'solid')">Solid</button>  
+      <button (click)="addStandardState($event, 'liquid')">Liquid</button>
+      <button (click)="addStandardState($event, 'gas')">Gas</button>
+      <button (click)="addStandardState($event, '')">Unknown</button>
+    </div>
 </div>
 <br>
 <div class="clear-box"> 
