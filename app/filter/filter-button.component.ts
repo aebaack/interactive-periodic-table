@@ -43,6 +43,9 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     }
   }
 
+  // TODO:
+  // It would be much better to simply capitalize and add an 's'
+  // To any name that easily pluralizes
   returnButtonName(groupName: string): string {
     switch (groupName) {
       case 'noble gas':
@@ -50,7 +53,29 @@ export class FilterButtonComponent implements OnInit, OnChanges {
       case 'halogen':
         return'Halogens';
       case 'nonmetal':
-        return 'Other';       
+        return 'Other';   
+      case 'actinoid':
+        return 'Actinoids';  
+      case 'alkali metal':
+        return 'Alkali Metals'; 
+      case 'alkaline earth metal':
+        return 'Alkaline Earth Metals'; 
+      case 'lanthanoid':
+        return 'Lanthanoids'; 
+      case 'transition metal':
+        return 'Transition Metals'; 
+      case 'metal':
+        return 'Other';
+      case 'metalloid':
+        return 'Metalloids'; 
+      case 'solid':
+        return 'Solid';
+      case 'liquid':
+        return 'Liquid';
+      case 'gas':
+        return 'Gas';
+      case '':
+        return 'Other';  
       default:
         break;
     }

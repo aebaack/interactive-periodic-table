@@ -2,34 +2,25 @@
   <div class="group-box">
     <div class = "filters nonMetals">
       <div *ngFor="let name of nonMetalNames">
-        <pt-button (click)="addGroupBlock($event, name)" class="mainGroup" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
+        <pt-button (click)="addGroupBlock($event, name)" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
       </div>
-      <button class="mainGroup" (click)="addGroupBlock($event, 'nonmetal')">Non-Metals</button>
-      <button (click)="addGroupBlock($event, 'halogen')">Halogens</button>
-      <button (click)="addGroupBlock($event, 'noble gas')">Noble Gas</button>
-      <button (click)="addGroupBlock($event, 'nonmetal')">Other</button>
     </div>  
 
     <div class = "filters metals">
-      <button class="mainGroup" (click)="addGroupBlock($event, 'metal')">Metals</button>
-      <button (click)="addGroupBlock($event, 'actinoid')">Actinoid</button>
-      <button (click)="addGroupBlock($event, 'alkali metal')">Alkali</button>
-      <button (click)="addGroupBlock($event, 'alkaline earth metal')">Alkaline Earth</button>
-      <button (click)="addGroupBlock($event, 'lanthanoid')">Lanthanoid</button>
-      <button (click)="addGroupBlock($event, 'transition metal')">Transition</button>
-      <button (click)="addGroupBlock($event, 'metal')">Other</button>
+      <div *ngFor="let name of metalNames">
+        <pt-button (click)="addGroupBlock($event, name)" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
+      </div>
    </div>
 
    <div class="filters metalloid">
-     <button class="mainGroup" (click)="addGroupBlock($event, 'metalloid')">Metalloids</button>
+     <pt-button (click)="addGroupBlock($event, 'metalloid')" [name]="metalloid" [filterGroupBlocks]="filter.groupBlock"></pt-button>
    </div>
 
     <div class="filters state-box">
       <h3>State</h3>
-      <button (click)="addStandardState($event, 'solid')">Solid</button>  
-      <button (click)="addStandardState($event, 'liquid')">Liquid</button>
-      <button (click)="addStandardState($event, 'gas')">Gas</button>
-      <button (click)="addStandardState($event, '')">Unknown</button>
+      <div *ngFor="let name of stateNames">
+        <pt-button (click)="addStandardState($event, name)" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
+      </div>
     </div>
 </div>
 <br>

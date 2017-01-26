@@ -17,6 +17,21 @@ export class FilterComponent implements OnInit {
     'halogen',
     'nonmetal'
   ];
+  metalNames: string[] = [
+    'actinoid', 
+    'alkaline earth metal', 
+    'alkali metal', 
+    'lanthanoid', 
+    'transition metal',
+    'metal'
+  ];
+  metalloid: string = 'metalloid';
+  stateNames: string[] = [
+    'solid',
+    'liquid',
+    'gas',
+    ''
+  ];
 
   constructor(private _elementService: ElementService) {
   }
