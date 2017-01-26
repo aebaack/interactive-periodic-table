@@ -74,14 +74,12 @@ export class FilterComponent implements OnInit {
   // Definitely needs to be refactored, but I'm rushed
   addGroupBlock(event: MouseEvent, groupBlock: string): void {
     this.highlightButton(event);
-    if (groupBlock === 'nonmetal') {
-      if (this.allElementsAlreadySelected('nonmetal')) {
+    if (groupBlock === 'nonmetal' || groupBlock === 'metal') {
+      if (this.allElementsAlreadySelected(groupBlock)) {
         this.filter.groupBlock = [];
       } else {
-        this.filter.groupBlock = this.returnAllNonMetals();
+        this.filter.groupBlock = this.returnAllElements(groupBlock);
       }
-    } else if (groupBlock === 'metal') {
-      this.filter.groupBlock = this.returnAllNonMetals();
     } else if (!this.groupBlockAlreadySelected(groupBlock)) {
       this.filter.groupBlock = [groupBlock];
     } else {
@@ -100,10 +98,12 @@ export class FilterComponent implements OnInit {
     }
   }
 
+  // Returns true if all of the elements of the specified type are already
+  // selected
   allElementsAlreadySelected(elementType: string): boolean {
     const elements = elementType === 'nonmetal' ?
-      this.returnAllNonMetals() :
-      this.returnAllMetals();
+      this.returnAllElements('nonmetal') :
+      this.returnAllElements('metal');
     if (this.filter.groupBlock.length === 0) {
       return false;
     } else {
@@ -114,25 +114,22 @@ export class FilterComponent implements OnInit {
     }
   }
 
-  // Sets the group block filter to include all non-metal elements
-  returnAllNonMetals(): string[] {
-    return [
-      'halogen', 
-      'noble gas', 
-      'nonmetal'
-    ];
-  }
-
-  // Sets the group block filter to include all metal elements
-  returnAllMetals(): string[] {
-    return [
-      'actinoid', 
-      'alkaline earth metal', 
-      'alkali metal', 
-      'lanthanoid', 
-      'metal',
-      'transition metal' 
-    ];
+  // Returns an array of all of the elements of the specified type
+  returnAllElements(elementType: string): string[] {
+    return elementType === 'nonmetal' ?
+      [
+        'halogen', 
+        'noble gas', 
+        'nonmetal'
+      ] :
+      [
+        'actinoid', 
+        'alkaline earth metal', 
+        'alkali metal', 
+        'lanthanoid', 
+        'metal',
+        'transition metal' 
+      ];
   }
 
   // Highlights the target button
