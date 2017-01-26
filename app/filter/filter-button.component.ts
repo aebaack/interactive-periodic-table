@@ -13,11 +13,14 @@ export class FilterButtonComponent implements OnInit, OnChanges {
   @Input() filterState: string;
   
   buttonName: string;
-  buttonHighlighted: boolean = true;
-  elementStyle: Object;
+  buttonHighlighted: boolean;
+  isMainGroup: boolean = false;;
 
   ngOnInit(): void {
     this.buttonName = this.returnButtonName(this.name);
+    if (this.buttonName === 'non-metals' || this.buttonName === 'metals') {
+      this.isMainGroup = true;
+    }
   }
 
   // Needs huge refactoring

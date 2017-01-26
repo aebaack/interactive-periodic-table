@@ -28,3 +28,7 @@ button:focus {
   background-color: #CFD8DC;
   color: #212121
 }
+
+.main-group {
+  font-size: 32em;
+}
