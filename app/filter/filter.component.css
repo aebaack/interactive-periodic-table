@@ -46,6 +46,8 @@ h3 {
   padding-left: 10px;
   font-size: 1.2em;
   font-family: arial;
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 .filters {
@@ -56,4 +58,14 @@ h3 {
   flex-direction: column;
   width: 100%;
   /*text-align: center;*/
+}
+
+.mainGroup {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.clearButton {
+  padding-left: 0;
+  text-align: center;
 }
