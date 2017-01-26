@@ -36,9 +36,9 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     } else if (this.filterGroupBlocks.length > 1) {
       const isNonMetal = this.filterGroupBlocks
         .some(groupBlock => groupBlock === 'noble gas');
-      if (isNonMetal && this.name === 'nonmetal') {
+      if (isNonMetal && this.name === 'allNonMetal') {
         this.buttonHighlighted = true;
-      } else if (!isNonMetal && this.name === 'metal') {
+      } else if (!isNonMetal && this.name === 'allMetal') {
         this.buttonHighlighted = true;
       } else {
         this.buttonHighlighted = false;

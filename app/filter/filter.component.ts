@@ -15,7 +15,8 @@ export class FilterComponent implements OnInit {
   nonMetalNames: string[] = [
     'noble gas',
     'halogen',
-    'nonmetal'
+    'nonmetal',
+    'allNonMetal'
   ];
   metalNames: string[] = [
     'actinoid', 
@@ -23,7 +24,8 @@ export class FilterComponent implements OnInit {
     'alkali metal', 
     'lanthanoid', 
     'transition metal',
-    'metal'
+    'metal',
+    'allMetal'
   ];
   metalloid: string = 'metalloid';
   stateNames: string[] = [
@@ -93,7 +95,7 @@ export class FilterComponent implements OnInit {
   // If the groupBlock passed in is 'metal', then all metals are added
   // Definitely needs to be refactored, but I'm rushed
   addGroupBlock(groupBlock: string): void {
-    if (groupBlock === 'nonmetal' || groupBlock === 'metal') {
+    if (groupBlock === 'allNonMetal' || groupBlock === 'allMetal') {
       if (this.allElementsAlreadySelected(groupBlock)) {
         this.filter.groupBlock = [];
       } else {
@@ -120,9 +122,9 @@ export class FilterComponent implements OnInit {
   // Returns true if all of the elements of the specified type are already
   // selected
   allElementsAlreadySelected(elementType: string): boolean {
-    const elements = elementType === 'nonmetal' ?
-      this.returnAllElements('nonmetal') :
-      this.returnAllElements('metal');
+    const elements = elementType === 'allNonMetal' ?
+      this.returnAllElements('allNonMetal') :
+      this.returnAllElements('allMetal');
     if (this.filter.groupBlock.length === 0) {
       return false;
     } else {
@@ -135,7 +137,7 @@ export class FilterComponent implements OnInit {
 
   // Returns an array of all of the elements of the specified type
   returnAllElements(elementType: string): string[] {
-    return elementType === 'nonmetal' ?
+    return elementType === 'allNonMetal' ?
       this.nonMetalNames : this.metalNames;
   }
 
