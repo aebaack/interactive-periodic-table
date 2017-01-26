@@ -33,10 +33,7 @@ export class PeriodicTableComponent implements OnInit {
       this.elementHeight = this.setHeight();
     });
 
-    this.showModal = false;
-
-    console.log(this.showModal, "SHOW ON INIT");
-    
+    this.showModal = false;    
   }
 
   setHeight(): number {
@@ -50,20 +47,65 @@ export class PeriodicTableComponent implements OnInit {
   hoverReceived(element: Element): void {
     this.element = element;
     document.getElementById("placeholder").innerText = this.element.name;
+    document.getElementById("welcome").innerText = "";
 
+    var topPortionColor = document.getElementById("topPortion");
+
+    console.log(element);
+    
+    switch(this.element.groupBlock) {
+      // console.log("made it into switch");
+      
+        case 'halogen':
+          topPortionColor.style.background = '#ffda00'; //orange
+          break;
+
+        case 'noble gas':
+          topPortionColor.style.background =  '#ffff00'; //yellow
+          break;
+
+        case 'nonmetal':
+          topPortionColor.style.background =  '#ffffb0'; //light yellow
+          break;
+
+        case 'actinoid':
+          topPortionColor.style.background =  '#9eff9e';  //very light green
+          break;
+
+        case 'alkali metal':
+          topPortionColor.style.background =  '#7ce348'; //light green
+          break;
+
+        case 'alkaline earth metal':
+          topPortionColor.style.background =  '#44cc77'; //green
+          break;
+
+        case 'lanthanoid':
+          topPortionColor.style.background =  '#00d060'; //green
+          break;
+
+        case 'transition metal':
+            topPortionColor.style.background =  '#0c914a'; //a bit darker green
+          break;
+        
+        case 'metal':
+          topPortionColor.style.background =  '#229988'; //dark green/blue
+          break;
+
+        case 'metalloid':
+          topPortionColor.style.background =  '#226688'; //drkblue
+          break;
+
+        default:
+    }
   }
   // ^ receives element data from child component
   onNotify(modalVisibility: any): void {
-    console.log(modalVisibility, "ON CLOSE CLICK");
     this.showModal = modalVisibility;
   }
 
-  toggleBohrModal(): void {
-    console.log("TABLE CLICK");    
-    
+  toggleBohrModal(): void {    
     this.showModal = !this.showModal;
-
-    console.log(this.showModal, "MODAL VIS AFTER CLICK");
 
     document.getElementById("bohr-model-container").innerHTML = ""; //^clearing html model
 
@@ -74,7 +116,7 @@ export class PeriodicTableComponent implements OnInit {
         nucleusColor: '00642f', // Hex, string or rbga
         electronRadius: 6, // Default value is 3
         electronColor: '#ffff00', // See nucleusColor
-        orbitalSpacing: 25, // If not specified will be a 1/3rd of the nucleusRadius
+        orbitalSpacing: 30, // If not specified will be a 1/3rd of the nucleusRadius
         orbitalWidth: 1, // width of orbital paths, default is 0.1
         orbitalColor: '#3aae70', // see electronColor
         idNumber: 1, // Required int to provide unique Atoms
@@ -90,5 +132,10 @@ export class PeriodicTableComponent implements OnInit {
     symbolOffset: 8, // When modifying nucleus radius this may need adjusting
     drawSymbol: true // Render atomic symbol or not
     });
+    document.getElementById("wikiSummary").innerText = this.Atom.wikiSummary;
+    document.getElementById("elementSymbol").innerText = this.Atom.atomicSymbol;
+    document.getElementById("elementName").innerText = this.Atom.elementName;
+
+
   }
 }
