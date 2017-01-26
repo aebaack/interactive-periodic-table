@@ -1,31 +1,30 @@
 <div class="filter-box">
   <div class="group-box">
-    <div class = "filters nonMetals">
+    <div class="filters">
       <div *ngFor="let name of nonMetalNames">
         <pt-button (click)="addGroupBlock($event, name)" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
       </div>
-    </div>  
+    </div>
 
-    <div class = "filters metals">
+    <div class="filters">
       <div *ngFor="let name of metalNames">
         <pt-button (click)="addGroupBlock($event, name)" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
       </div>
-   </div>
+    </div>
 
-   <div class="filters metalloid">
-     <pt-button (click)="addGroupBlock($event, 'metalloid')" [name]="metalloid" [filterGroupBlocks]="filter.groupBlock"></pt-button>
-   </div>
+    <div class="filters">
+      <pt-button (click)="addGroupBlock($event, 'metalloid')" [name]="metalloid" [filterGroupBlocks]="filter.groupBlock"></pt-button>
+    </div>
 
-    <div class="filters state-box">
+    <div class="filters">
       <h3>State</h3>
       <div *ngFor="let name of stateNames">
         <pt-button (click)="addStandardState($event, name)" [name]="name" [filterGroupBlocks]="filter.groupBlock"></pt-button>
       </div>
     </div>
+  </div>
+  <br>
+  <div class="clear-box">
+    <button class="clearButton" (click)="clearFilter()">Clear</button>
+  </div>
 </div>
-<br>
-<div class="clear-box"> 
-  <button class="clearButton" (click)="clearFilter()">Clear</button>
-</div>
-</div>
-
