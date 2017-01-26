@@ -1,27 +1,35 @@
 <div class="filter-box">
   <div class="group-box">
-<h3>Group</h3>
-<button (click)="addGroupBlock('nonmetal')">Non Metal</button>
-<button (click)="addGroupBlock('noble gas')">Noble Gas</button>
-<button (click)="addGroupBlock('halogen')">Halogen</button>
-<button (click)="addGroupBlock('metal')">Metal</button>
-<button (click)="addGroupBlock('alkali metal')">Alkali Metal</button>
-<button (click)="addGroupBlock('alkaline earth metal')">Alkaline Earth Metal</button>
-<button (click)="addGroupBlock('transition metal')">Transition Metal</button>
-<button (click)="addGroupBlock('lanthanoid')">Lanthanoid</button>
-<button (click)="addGroupBlock('actinoid')">Actinoid</button>
-<button (click)="addGroupBlock('metalloid')">Metalloid</button>
+    <div class = "filters nonMetals">
+      <h3>Non-Metals</h3>
+      <button (click)="addGroupBlock('nonmetal')">All</button>
+      <button (click)="addGroupBlock('halogen')">Halogens</button>
+      <button (click)="addGroupBlock('noble gas')">Noble Gas</button>
+      <button (click)="addGroupBlock('nonmetal')">Other</button>
+    </div>  
+
+    <div class = "filters metals">
+      <h3>Metals</h3>
+      <button (click)="addGroupBlock('metal')">All</button>
+      <button (click)="addGroupBlock('actinoid')">Actinoid</button>
+      <button (click)="addGroupBlock('alkali metal')">Alkali</button>
+      <button (click)="addGroupBlock('alkaline earth metal')">Alkaline Earth</button>
+      <button (click)="addGroupBlock('lanthanoid')">Lanthanoid</button>
+      <button (click)="addGroupBlock('transition metal')">Transition</button>
+      <!--<button (click)="addGroupBlock('metalloid')">Metalloid</button>-->
+   </div>
+
+  <div class="filters state-box">
+    <h3>State</h3>
+    <button (click)="addStandardState('solid')">Solid</button>  
+    <button (click)="addStandardState('liquid')">Liquid</button>
+    <button (click)="addStandardState('gas')">Gas</button>
+    <button (click)="addStandardState('')">Unknown</button>
+  </div>
 </div>
-<div class="state-box">
-<h3>State</h3>
-<button (click)="addStandardState('solid')">Solid</button>
-<button (click)="addStandardState('liquid')">Liquid</button>
-<button (click)="addStandardState('gas')">Gas</button>
+<br>
+<div class="clear-box"> 
+  <button (click)="clearFilter()">Clear</button>
 </div>
-<div class="clear-box">
-<h3>Clear</h3>
-<button (click)="clearFilter()">Clear</button>
 </div>
-<!-- Group Blocks: {{filter.groupBlock}}<br>
-Standard State:{{filter.standardState}} -->
-</div>
+

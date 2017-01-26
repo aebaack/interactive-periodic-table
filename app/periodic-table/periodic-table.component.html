@@ -1,6 +1,8 @@
-<h1>Periodic Table</h1>
 <bohr-modal [showBohrModal]="showModal"></bohr-modal>
-<pt-filter></pt-filter>
+<section class = "container-periodicTable-flex">
+<section class="pt-filter">
+    <pt-filter></pt-filter>
+</section>
 <div class="periodic-table" (click)="toggleBohrModal()" (keyup)="toggleBohrModal()">
     <div [style.height.px]='elementHeight' class="row clearfix">
         <pt-element [elementData]="getElement(1)" id="element_1" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
@@ -218,3 +220,4 @@
         <pt-element [elementData]="getElement(103)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
     </div>
 </div>
+</section>
