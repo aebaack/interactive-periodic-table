@@ -1,3 +1,21 @@
 h1 {
   color: pink;
 }
+
+.filter-box {
+  /*border: black solid 1px;*/
+}
+
+button {
+  padding: .2% .4%;
+  margin-left: .5%;
+  font-size: 1.2vw;
+  border-radius: 5px;
+  border: none;
+  background-color: orange;
+  transition-duration: .5s;
+}
+
+button:hover {
+  background-color: red;
+}

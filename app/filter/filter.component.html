@@ -1,24 +1,27 @@
+<div class="filter-box">
+  <div class="group-box">
 <h3>Group</h3>
 <button (click)="addGroupBlock('nonmetal')">Non Metal</button>
 <button (click)="addGroupBlock('noble gas')">Noble Gas</button>
 <button (click)="addGroupBlock('halogen')">Halogen</button>
-<br>
 <button (click)="addGroupBlock('metal')">Metal</button>
 <button (click)="addGroupBlock('alkali metal')">Alkali Metal</button>
 <button (click)="addGroupBlock('alkaline earth metal')">Alkaline Earth Metal</button>
 <button (click)="addGroupBlock('transition metal')">Transition Metal</button>
 <button (click)="addGroupBlock('lanthanoid')">Lanthanoid</button>
 <button (click)="addGroupBlock('actinoid')">Actinoid</button>
-<br>
 <button (click)="addGroupBlock('metalloid')">Metalloid</button>
-<br>
+</div>
+<div class="state-box">
 <h3>State</h3>
 <button (click)="addStandardState('solid')">Solid</button>
 <button (click)="addStandardState('liquid')">Liquid</button>
 <button (click)="addStandardState('gas')">Gas</button>
-<br>
+</div>
+<div class="clear-box">
 <h3>Clear</h3>
 <button (click)="clearFilter()">Clear</button>
-<br>
-Group Blocks: {{filter.groupBlock}}<br>
-Standard State:{{filter.standardState}}
+</div>
+<!-- Group Blocks: {{filter.groupBlock}}<br>
+Standard State:{{filter.standardState}} -->
+</div>
