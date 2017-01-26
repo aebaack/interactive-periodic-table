@@ -45,7 +45,7 @@ export class PeriodicTableComponent implements OnInit {
   hoverReceived(element: Element): void {
     this.element = element;
     document.getElementById("placeholder").innerText = this.element.name;
-    
+
   }
   // ^ receives element data from child component
 
@@ -62,15 +62,15 @@ export class PeriodicTableComponent implements OnInit {
         electronColor: '#ffff00', // See nucleusColor
         orbitalSpacing: 25, // If not specified will be a 1/3rd of the nucleusRadius
         orbitalWidth: 1, // width of orbital paths, default is 0.1
-        orbitalColor: 'black', // see electronColor
+        orbitalColor: '#3aae70', // see electronColor
         idNumber: 1, // Required int to provide unique Atoms
         animationTime: 1300, // Time in milliseconds for initial electron animation
         rotateConfig: {speed: 50, clockwise: true}, // Rotates entire Atom with given params
         orbitalRotationConfig: { // Invokes orbital rotations at initialization
         pattern: {
-        alternating: false, // Alternate orbital direction
+        alternating: true, // Alternate orbital direction
         clockwise: false, // Direction for all orbitals
-        preset: 'cubedPositive', // String to set pattern (see Features section)
+        preset: 'cubedNegative', // String to set pattern (see Features section)
     }
   },
     symbolOffset: 8, // When modifying nucleus radius this may need adjusting
