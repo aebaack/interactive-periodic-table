@@ -178,7 +178,11 @@ export class FilterComponent implements OnInit {
   // Sets the standardState filter parameter to the string passed in
   addStandardState(event: MouseEvent, standardState: string): void {
     // this.highlightButton(event);
-    this.filter.standardState = standardState;
+    if (standardState === this.filter.standardState) {
+      this.filter.standardState = 'any';
+    } else {
+      this.filter.standardState = standardState;
+    }
     this.highlightElements();
   }
 
