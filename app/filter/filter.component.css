@@ -1,14 +1,12 @@
-h1 {
+/*h1 {
   color: pink;
-}
+}*/
 
 .filter-box {
-  /*border: black solid 1px;*/
   width: 100%;
   padding-top: 2vh;
   height: 100vh;
   background-color: #fff;
-  /*padding: 16px;*/
 }
 
 button {
@@ -22,13 +20,10 @@ button {
   cursor: pointer;
   text-align: left;
   padding-left: 20px;
-  /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
 }
 
 button:hover {
-  /*background-color: red;*/
   background-color: #bdbdbd;
-  /*box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
 }
 
 button:focus {
@@ -36,8 +31,6 @@ button:focus {
 }
 
 .group-box {
-  /*width: 100%;*/
-  /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
 }
@@ -51,13 +44,9 @@ h3 {
 }
 
 .filters {
-  /*flex-grow: 1;*/
-  /*border: solid 1px blue;*/
-  /*padding-left: 16px;*/
   display: flex;
   flex-direction: column;
   width: 100%;
-  /*text-align: center;*/
 }
 
 .mainGroup {
