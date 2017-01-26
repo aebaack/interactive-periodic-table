@@ -23,8 +23,8 @@ export class ElementComponent implements DoCheck {
   // itself is changed
   ngDoCheck() {
     if (this.elementData.highlight) {
-      console.log(this.elementData.groupBlock);
-      console.log(this.elementData.standardState);
+      // console.log(this.elementData.groupBlock);
+      // console.log(this.elementData.standardState);
       
       switch(this.elementData.groupBlock) {
    
