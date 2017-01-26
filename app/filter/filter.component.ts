@@ -13,19 +13,19 @@ export class FilterComponent implements OnInit {
   elements: Element[];
   filter: Filter;
   nonMetalNames: string[] = [
+    'allNonMetal',
     'noble gas',
     'halogen',
-    'nonmetal',
-    'allNonMetal'
+    'nonmetal'
   ];
   metalNames: string[] = [
+    'allMetal',
     'actinoid', 
     'alkaline earth metal', 
     'alkali metal', 
     'lanthanoid', 
     'transition metal',
-    'metal',
-    'allMetal'
+    'metal'
   ];
   metalloid: string = 'metalloid';
   stateNames: string[] = [

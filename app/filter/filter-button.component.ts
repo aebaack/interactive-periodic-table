@@ -18,7 +18,7 @@ export class FilterButtonComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.buttonName = this.returnButtonName(this.name);
-    if (this.buttonName === 'non-metals' || this.buttonName === 'metals') {
+    if (this.buttonName === 'nonmetals' || this.buttonName === 'metals' || this.buttonName === 'metalloids') {
       this.isMainGroup = true;
     }
   }
@@ -61,6 +61,10 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     switch(groupName) {
       case 'noble gas':
         return 'noble gases';
+      case 'allNonMetal':
+        return 'nonmetals'
+      case 'allMetal':
+        return 'metals';
       // fallthrough
       case 'solid':
       case 'liquid':

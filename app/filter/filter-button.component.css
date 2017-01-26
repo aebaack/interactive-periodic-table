@@ -8,7 +8,7 @@ button {
   font-family: arial;
   cursor: pointer;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 28px;
   color: rgba(255, 255, 255, 0.87);
   /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
 }
@@ -30,5 +30,6 @@ button:focus {
 }
 
 .main-group {
-  font-size: 32em;
+  font-weight: bold;
+  padding-left: 10px;
 }

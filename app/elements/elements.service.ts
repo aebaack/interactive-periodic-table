@@ -11,7 +11,7 @@ export class ElementService {
   getElements(): void {
     const elements = JSON.parse(readFileSync('./app/assets/elements.json', 'utf8'));
     for (const element of elements) {
-      element.highlight = false;
+      element.highlight = true;
     }
     //elements[0].highlight = true;
     this.elements = elements;
