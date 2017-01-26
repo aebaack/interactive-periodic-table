@@ -92,8 +92,7 @@ export class FilterComponent implements OnInit {
   // If the groupBlock passed in is 'nonmetal', then all non-metals are added
   // If the groupBlock passed in is 'metal', then all metals are added
   // Definitely needs to be refactored, but I'm rushed
-  addGroupBlock(event: MouseEvent, groupBlock: string): void {
-    // this.highlightButton(event);
+  addGroupBlock(groupBlock: string): void {
     if (groupBlock === 'nonmetal' || groupBlock === 'metal') {
       if (this.allElementsAlreadySelected(groupBlock)) {
         this.filter.groupBlock = [];
@@ -137,47 +136,11 @@ export class FilterComponent implements OnInit {
   // Returns an array of all of the elements of the specified type
   returnAllElements(elementType: string): string[] {
     return elementType === 'nonmetal' ?
-      [
-        'halogen', 
-        'noble gas', 
-        'nonmetal'
-      ] :
-      [
-        'actinoid', 
-        'alkaline earth metal', 
-        'alkali metal', 
-        'lanthanoid', 
-        'metal',
-        'transition metal' 
-      ];
-  }
-
-  // Highlights the target button
-  // Needs to be updated to an 'angular' way, but I don't have time right now
-  highlightButton(event: MouseEvent): void {
-    this.unhighlightButtons();
-    const button = event.target as HTMLElement;
-    if (button.style.backgroundColor !== 'gray') {
-      button.style.backgroundColor = 'gray';
-    } else {
-      button.style.backgroundColor = '#fff';
-    }
-  }
-
-  // Unhighlights all filter buttons
-  // Needs to be updated to an 'angular' way, but I don't have time right now
-  unhighlightButtons(): void {
-    const buttons = document
-      .getElementsByClassName('filter-box')[0]
-      .getElementsByTagName('button');
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].style.backgroundColor = '#fff';
-    }
+      this.nonMetalNames : this.metalNames;
   }
 
   // Sets the standardState filter parameter to the string passed in
-  addStandardState(event: MouseEvent, standardState: string): void {
-    // this.highlightButton(event);
+  addStandardState(standardState: string): void {
     if (standardState === this.filter.standardState) {
       this.filter.standardState = 'any';
     } else {
