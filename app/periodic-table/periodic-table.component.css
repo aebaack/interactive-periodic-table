@@ -1,8 +1,22 @@
 
+.container-periodicTable-flex {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.pt-filter{
+    flex: 2;
+}
+
 .periodic-table {
-    width: 80%;
-    min-width: 800px;
-    margin: 5% auto;
+    /*width: 80%;*/
+    /*min-width: 800px;*/
+    /*margin: 1% auto;*/
+    flex: 8;
+    padding: 16px;
 }
 
 .row {
