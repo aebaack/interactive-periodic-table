@@ -29,8 +29,3 @@ h3 {
   flex-direction: column;
   width: 100%;
 }
-
-.clearButton {
-  padding-left: 0;
-  text-align: center;
-}
