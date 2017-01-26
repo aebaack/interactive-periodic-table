@@ -13,6 +13,7 @@ export class FilterButtonComponent implements OnInit, OnChanges {
   @Input() filterGroupBlocks: string[];
   
   buttonName: string;
+  elementStyle: Object;
 
   ngOnInit(): void {
     this.buttonName = this.returnButtonName(this.name);
@@ -21,6 +22,11 @@ export class FilterButtonComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     if (this.filterGroupBlocks.length === 1) {
       const filterGroup = this.filterGroupBlocks[0];
+      if (filterGroup === this.name) {
+        this.elementStyle = {'background-color': 'red'};
+      } else {
+        this.elementStyle = {'background-color': 'transparent'};
+      }
     }
   }
 
