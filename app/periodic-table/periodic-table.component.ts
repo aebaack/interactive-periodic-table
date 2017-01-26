@@ -56,11 +56,11 @@ export class PeriodicTableComponent implements OnInit {
     this.Atom = new Atom({
         containerId: '#bohr-model-container',
         numElectrons: this.element.atomicNumber, // An integer between 1 and 118
-        nucleusRadius: 30, // If not supplied will be 1/12 of the containers width
-        nucleusColor: 'rgba(124,240,10,0.5)', // Hex, string or rbga
-        electronRadius: 3, // Default value is 3
-        electronColor: 'pink', // See nucleusColor
-        orbitalSpacing: 10, // If not specified will be a 1/3rd of the nucleusRadius
+        nucleusRadius: 40, // If not supplied will be 1/12 of the containers width
+        nucleusColor: '00642f', // Hex, string or rbga
+        electronRadius: 6, // Default value is 3
+        electronColor: '#ffff00', // See nucleusColor
+        orbitalSpacing: 25, // If not specified will be a 1/3rd of the nucleusRadius
         orbitalWidth: 1, // width of orbital paths, default is 0.1
         orbitalColor: 'black', // see electronColor
         idNumber: 1, // Required int to provide unique Atoms
