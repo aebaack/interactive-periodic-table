@@ -11,6 +11,7 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 export class FilterButtonComponent implements OnInit, OnChanges {
   @Input() name: string;
   @Input() filterGroupBlocks: string[];
+  @Input() filterState: string;
   
   buttonName: string;
   elementStyle: Object;
@@ -19,6 +20,8 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     this.buttonName = this.returnButtonName(this.name);
   }
 
+  // Needs huge refactoring
+  // This was just the fastest way to solve the problem...
   ngOnChanges(): void {
     if (this.filterGroupBlocks.length === 1) {
       const filterGroup = this.filterGroupBlocks[0];
@@ -40,6 +43,14 @@ export class FilterButtonComponent implements OnInit, OnChanges {
     }
     else {
       this.elementStyle = {'background-color': 'transparent'};
+    }
+
+    if (this.name === 'solid' || this.name === 'liquid' || this.name === 'gas' || this.name === '') {
+      if (this.filterState === this.name) {
+        this.elementStyle = {'background-color': 'red'};
+      } else {
+        this.elementStyle = {'background-color': 'transparent'};
+      }
     }
   }
 
