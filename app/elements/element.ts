@@ -19,5 +19,5 @@ export class Element {
   symbol: string;
   vanDelWaalsRadius?: number;
   yearDiscovered?: string;
-  highlight: boolean;
+  highlight?: boolean;
 }
