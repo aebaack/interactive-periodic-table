@@ -9,7 +9,7 @@
     border-radius: 2%;
     background-color: #212121;
     overflow: hidden;
-    animation-name: topToMiddle;
+    animation-name: bottomToMiddle;
     animation-duration: 0.4s;
 }
 
