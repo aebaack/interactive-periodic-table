@@ -5,7 +5,7 @@
 <section class="pt-filter">
     <pt-filter></pt-filter>
 </section>
-<div class="periodic-table" (click)="toggleBohrModal()" (keyup)="toggleBohrModal()">
+<div class="periodic-table" (click)="toggleBohrModal()">
     <div [style.height.px]='elementHeight' class="row clearfix">
         <pt-element [elementData]="getElement(1)" id="element_1" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
         <!--[elementData] binds child component's elementData property to the getElement fxn in periodic-table component-->
