@@ -59,6 +59,7 @@
     width:100%;
     background-color: lightgray;
     padding: 1vw;
+    font-size: 3vw;
 }
 
 #atomicMass {
@@ -80,6 +81,7 @@
     border-radius: 5%;
     float: right;
     font-size: 5vw;
+    font-family: arial;
 }
 
 #atomicNumber {
