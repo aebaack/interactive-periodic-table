@@ -1,5 +1,5 @@
 {
-  "name": "interactive-periodic-table",
+  "name": "atom-superstratum",
   "version": "1.0.0",
   "main": "main.js",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
@@ -13,7 +13,7 @@
     "test-once": "tsc && karma start karma.conf.js --single-run",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "build": "rimraf Periodic-* && electron-packager . --platform=darwin,win32,linux --arch=x64 --icon=app"
+    "build": "rimraf AtomSuperstratum-* && electron-packager . 'Atom Superstratum' --platform=darwin --arch=x64 --icon=icon"
   },
   "keywords": [],
   "author": "KJ",

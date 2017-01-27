@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { readFileSync } from 'fs'; // calls the readFileSync method from the node file system module
+import { periodicElements } from './returnElements';
 import { Element } from './element';
 
 @Injectable()
@@ -9,11 +10,11 @@ export class ElementService {
 
   // synchronously returns the elements from elements.json
   getElements(): void {
-    const elements = JSON.parse(readFileSync('./app/assets/elements.json', 'utf8'));
+    const elements = periodicElements;
+    // const elements = JSON.parse(readFileSync('./app/assets/elements.json', 'utf8'));
     for (const element of elements) {
       element.highlight = true;
     }
-    //elements[0].highlight = true;
     this.elements = elements;
   }
 
