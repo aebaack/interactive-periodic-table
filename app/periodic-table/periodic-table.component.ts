@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ElementService } from '../elements/elements.service';
 import { BohrModalComponent } from '../bohr-modal/bohr-modal.component';
 import { Element } from '../elements/element';
@@ -19,8 +19,27 @@ export class PeriodicTableComponent implements OnInit {
   element: any;
   showModal: boolean;
   Atom: any;
+  keyboardEvent: KeyboardEvent;
 
   constructor(private _elementService: ElementService) {
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  keyboardInput(event:any){
+    event.preventDefault();
+    event.stopPropagation();
+
+    this.keyboardEvent = event;
+    console.log(this.keyboardEvent);
+    if(this.keyboardEvent.key === 'Escape' || this.keyboardEvent.key === 'x' || this.keyboardEvent.key === 'X'){
+      this.showModal = !this.showModal;
+    }
+    // if(this.keyboardEvent.key === 'ArrowRight'){
+    //   this.element.atomicNumber++;
+    // }
+
+    
+
   }
 
   ngOnInit(): void {
