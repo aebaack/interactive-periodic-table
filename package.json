@@ -13,7 +13,7 @@
     "test-once": "tsc && karma start karma.conf.js --single-run",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "build": "rimraf AtomSuperstratum-* && electron-packager . 'Atom Superstratum' --platform=darwin --arch=x64 --icon=icon"
+    "build": "rimraf AtomSuperstratum-* && electron-packager . 'Atom Superstratum' --platform=darwin --arch=x64 --overwrite --icon=icon"
   },
   "keywords": [],
   "author": "KJ",

@@ -31,10 +31,10 @@ export class PeriodicTableComponent implements OnInit {
 
     this.keyboardEvent = event;
     console.log(this.keyboardEvent);
-    if (this.keyboardEvent.key === 'Escape' || this.keyboardEvent.key === 'x' || this.keyboardEvent.key === 'X') {
+    if (this.showModal === true && this.keyboardEvent.key === 'Escape' || this.keyboardEvent.key === 'x' || this.keyboardEvent.key === 'X') {
       this.showModal = !this.showModal;
     }
-    if (this.keyboardEvent.key === 'ArrowRight') {
+    if (this.showModal === true && this.keyboardEvent.key === 'ArrowRight') {
       if (this.element.atomicNumber < 118) {
 
         this.element = this.elements[this.element.atomicNumber];
@@ -69,7 +69,7 @@ export class PeriodicTableComponent implements OnInit {
         document.getElementById("elementName").innerText = this.Atom.elementName;
       }
     }
-    if (this.keyboardEvent.key === 'ArrowLeft') {
+    if (this.showModal === true && this.keyboardEvent.key === 'ArrowLeft') {
       if (this.element.atomicNumber > 1) {
         this.element = this.elements[this.element.atomicNumber - 2];
 
