@@ -41,3 +41,25 @@ footer a img {
   right: 10px;
   width: 25px;
 }
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading h1 {
+    text-align: center;
+    font-size: 6vw;
+    animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+    0% {
+        color: rgba(15, 15, 15, 0);
+    }
+    100% {
+        color: rgba(15, 15, 15, 1);
+    }
+}
