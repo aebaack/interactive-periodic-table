@@ -1,9 +1,11 @@
 .element {
+    -webkit-user-select: none;
     width: 100%;
     height: 100%;
     border: 1px solid black;
     border-radius: 5%;
     font-family: arial;
+    cursor: default;
 }
 
 .atomicNumber {
