@@ -9,6 +9,17 @@
     border-radius: 2%;
     background-color: #212121;
     overflow: hidden;
+    animation-name: topToMiddle;
+    animation-duration: 0.4s;
+}
+
+@keyframes bottomToMiddle {
+    from {
+        top: 150%;
+    }
+    to {
+        top: 50%;
+    }
 }
 
 #info-left {
