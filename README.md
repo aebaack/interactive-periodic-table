@@ -1,23 +1,14 @@
-# interactive-periodic-table
-q3 project
+# Atom Superstratum
+![Main Page](/readme/main.png)
+Atom Superstratum is a Mac only interactive periodic table built for the desktop. Users can explore different atoms by viewing essential information such as atomic mass, electronegativity, and melting/boiling points. 
 
-GitHub setup:
-* echo node_modules >> .gitignore
-* echo .DS_Store > .gitignore
+By clicking on a specific element in the periodic table, a user can even view an animated Bohr model and plenty of additional information about the selected element.
 
-Pull Request Process:
-* git checkout -b initials_branch_name
-* Make changes to code
-* Add and commit
-* git pull origin master into your branch
-  * merge conflicts?
-    * Slack team that there is a merge conflict
-    * fix merge conflicts in Atom
-    * close file in Atom
-    * commit merge conflict fixes
-* if no merge conflicts, git push origin branch_name
-* Submit a Pull Request in GitHub to merge to master
-* Slack Team that you merged your branch with master
-* Team will git pull origin master on local drive
+## Categorized Elements
+![Categories](/readme/metals.png)
+The left hand column includes different categories that the elements can fall under. By selecting a specific category such as **Metals**, all of the elements that match the selection will remain highlighted, while the others will go blank.
+![Solid Elements](/readme/solid.png)
 
-**Check Waffle.io for who is working on what files!**
+## Additional Element Information
+![Oxygen Additional Information](/readme/oxygen.png)
+When an element is clicked on, a popup will appear that displays additional element information and an animated Bohr model.
